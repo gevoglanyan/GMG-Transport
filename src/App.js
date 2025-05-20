@@ -70,27 +70,27 @@ const vehicles = [
     image: "/images/Escalade.png",
     alt: "Cadillac Escalade",
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
-    capacity: "Up to 6 passengers",
-    luggage: "4–5 suitcases",
-    amenities: "Wi-Fi, bottled water, leather seats, climate control"
+    capacity: "Up to 6 Passengers",
+    luggage: "4–5 Suitcases",
+    amenities: "Wi-Fi, Bottled Water, Leather Seats, Climate Control"
   },
   {
     title: "Chevy Suburban",
     image: "/images/Surburban.png",
     alt: "Chevy Suburban",
     desc: "Ideal for larger groups and luggage, the Suburban offers comfort, safety, and flexibility for long trips or corporate rides.",
-    capacity: "Up to 7 passengers",
-    luggage: "6–7 suitcases",
-    amenities: "Wi-Fi, charging ports, climate control, tinted windows"
+    capacity: "Up to 7 Passengers",
+    luggage: "6–7 Suitcases",
+    amenities: "Wi-Fi, Charging Ports, Climate Control, Tinted Windows"
   },
   {
     title: "GMC Yukon",
     image: "/images/Yukon.png",
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
-    capacity: "Up to 6 passengers",
-    luggage: "5–6 suitcases",
-    amenities: "Wi-Fi, premium sound, refreshments, climate control"
+    capacity: "Up to 6 Passengers",
+    luggage: "5–6 Suitcases",
+    amenities: "Wi-Fi, Premium Sound, Climate Control"
   }
 ];
 
@@ -119,9 +119,11 @@ function VehiclesSection() {
 
                   {visibleDetails === i && (
                     <ul className="text-sm text-gray-600 mb-4 space-y-1">
+                      <br />
                       <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
                       <li><strong>Luggage:</strong> {v.luggage}</li>
                       <li><strong>Amenities:</strong> {v.amenities}</li>
+                      <br />
                     </ul>
                   )}
                 </div>
@@ -149,12 +151,30 @@ function VehiclesSection() {
 }
 
 function App() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <header className="bg-gray-800 shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">GMG Transport Inc</h1>
-          <nav className="space-x-6 text-sm font-medium text-gray-300">
+    <div className="flex flex-col min-h-screen bg-white text-gray-800 scroll-smooth">
+      <header className="bg-gray-800 shadow-md w-full px-4 py-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-white">GMG Transportation Inc</h1>
+
+          <button
+            className="block sm:hidden text-gray-300 hover:text-white focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+
+          <nav className="hidden sm:flex space-x-6 text-sm font-medium text-gray-300">
             <a href="#home" className="hover:text-white">Home</a>
             <a href="#services" className="hover:text-white">Services</a>
             <a href="#about" className="hover:text-white">About</a>
@@ -162,9 +182,22 @@ function App() {
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
         </div>
+
+        {menuOpen && (
+          <div className="block sm:hidden mt-2 px-4 space-y-2 text-sm font-medium text-gray-300">
+            <br />
+            <a href="#home" className="block hover:text-white" onClick={() => setMenuOpen(false)}>Home</a>
+            <a href="#services" className="block hover:text-white" onClick={() => setMenuOpen(false)}>Services</a>
+            <a href="#about" className="block hover:text-white" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#vehicles" className="block hover:text-white" onClick={() => setMenuOpen(false)}>Vehicles</a>
+            <a href="#contact" className="block hover:text-white" onClick={() => setMenuOpen(false)}>Contact</a>
+            <br />
+          </div>
+        )}
       </header>
 
-      <section id="home" className="bg-white h-[60vh] flex items-center">
+
+      <section id="home" className="bg-white h-[60vh] flex items-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto px-6 text-gray-800 text-center">
           <h2 className="text-4xl font-bold mb-4">Luxury Services</h2>
           <p className="text-lg mb-6">Professional, reliable, and elegant transportation for every occasion.</p>
@@ -173,49 +206,42 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="py-16 bg-white">
+      <section id="services" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold text-black-700 mb-10">Our Premium Services</h3>
           <div className="grid md:grid-cols-3 gap-10">
             <div className="p-6 shadow rounded bg-gray-50">
               <h4 className="text-xl font-bold mb-2">Luxury Airport Transfers</h4>
-              <p>
-                Arrive in style with our punctual, comfortable, and hassle-free airport pick-ups and drop-offs in premium vehicles.
-              </p>
+              <p>Arrive in style with our punctual, comfortable, and hassle-free airport pick-ups and drop-offs in premium vehicles.</p>
             </div>
             <div className="p-6 shadow rounded bg-gray-50">
               <h4 className="text-xl font-bold mb-2">Executive & Corporate Travel</h4>
-              <p>
-                Impress clients and colleagues with our discreet, professional chauffeur services designed for business travelers.
-              </p>
+              <p>Impress clients and colleagues with our discreet, professional chauffeur services designed for business travelers.</p>
             </div>
             <div className="p-6 shadow rounded bg-gray-50">
               <h4 className="text-xl font-bold mb-2">Special Occasions & Events</h4>
-              <p>
-                Celebrate weddings, parties, or nights out with elegant and luxurious rides that make every event unforgettable.
-              </p>
+              <p>Celebrate weddings, parties, or nights out with elegant and luxurious rides that make every event unforgettable.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-16 bg-white">
+      <section id="about" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-semibold text-black-700 mb-6">About GMG Transport Inc</h3>
+          <h3 className="text-3xl font-semibold text-black-700 mb-6">About GMG Transportion Inc</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
-            GMG Transport Inc is dedicated to delivering top-tier transportation services with elegance, professionalism, and reliability. With a fleet of premium vehicles and experienced chauffeurs, we ensure that your ride is not just a journey—but an experience.
+            GMG Transportion Inc is dedicated to delivering top-tier transportation services with elegance, professionalism, and reliability. With a fleet of premium vehicles and experienced chauffeurs, we ensure that your ride is not just a journey—but an experience.
           </p>
         </div>
       </section>
 
-      <VehiclesSection/>
-      
-      <section id="contact" className="py-16 bg-white">
+      <VehiclesSection />
+
+      <section id="contact" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold mb-6 text-black-700">Contact Us</h3>
           <p className="text-gray-700 mb-8">
-            Ready to ride in style? 
-            Get in touch to book your luxury transportation today.
+            Ready to ride in style? Get in touch to book your luxury transportation today.
           </p>
 
           <ContactForm />
@@ -227,7 +253,7 @@ function App() {
       </section>
 
       <footer className="bg-gray-800 text-white text-center py-6">
-        &copy; {new Date().getFullYear()} GMG Transport Inc. All Rights Reserved.
+        &copy; {new Date().getFullYear()} GMG Transportation Inc. All Rights Reserved.
       </footer>
     </div>
   );
