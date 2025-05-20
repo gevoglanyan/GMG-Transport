@@ -247,7 +247,7 @@ function App() {
           <ContactForm />
 
           <p className="mt-8 text-gray-600">
-            Or call us directly at <a href="tel:+1234567890" className="text-blue-600 font-medium hover:underline"><br />+1 (323) 841-5151</a>
+            Or call us directly at <a href="tel:+3238415151" className="text-blue-600 font-medium hover:underline"><br />+1 (323) 841-5151</a>
           </p>
         </div>
       </section>
