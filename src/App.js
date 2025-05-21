@@ -176,7 +176,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-gray-800 scroll-smooth">
+    <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-gray-800 scroll-smooth">
       <header className="bg-gray-800 shadow-md w-full px-4 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white text-center sm:text-left">
@@ -225,7 +225,7 @@ function App() {
           <img
             src="/images/GMG.png"
             alt="GMG Transportation Logo"
-            className="mx-auto max-w-[340px] sm:max-w-[360px] md:max-w-[320px] h-auto"
+            className="mx-auto w-[90%] max-w-[320px] h-auto"
           />
 
           <h2 className="text-4xl font-bold mb-4">Luxury Services</h2>
