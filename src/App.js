@@ -56,7 +56,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-full"
+        className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-900 transition w-full"
       >
         Send Message
       </button>
@@ -142,21 +142,21 @@ function VehiclesSection() {
                 <div className="flex flex-wrap gap-3 mt-auto">
                   <a
                     href="#contact"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition"
+                    className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded text-sm font-medium transition"
                   >
                     Book Now
                   </a>
 
                   <button
                     onClick={() => toggleDetails(i)}
-                    className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
+                    className="border border-gray-800 text-gray-800 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
                   >
                     {visibleDetails === i ? 'Hide Details' : 'Details'}
                   </button>
 
                   <button
                     onClick={() => toggleRates(i)}
-                    className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
+                    className="border border-gray-800 text-gray-800 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
                   >
                     {visibleRates === i ? 'Hide Rates' : 'Rates'}
                   </button>
@@ -231,11 +231,11 @@ function App() {
           <h2 className="text-4xl font-bold mb-4">Luxury Services</h2>
           <p className="text-lg mb-6">Professional, reliable, and elegant transportation for every occasion.</p>
 
-          <a href="#vehicles" className="bg-blue-600 px-6 py-3 rounded text-white font-semibold hover:bg-blue-500 transition block w-max mx-auto mb-4">
+          <a href="#vehicles" className="bg-gray-800 px-6 py-3 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto mb-4">
             View Vehicles
           </a>
 
-          <a href="#contact" className="bg-blue-600 px-6 py-3 rounded text-white font-semibold hover:bg-blue-500 transition block w-max mx-auto mb-8">
+          <a href="#contact" className="bg-gray-800 px-6 py-3 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto mb-8">
             Book a Ride
           </a>
         </div>
@@ -282,7 +282,7 @@ function App() {
           <ContactForm />
 
           <p className="mt-8 text-gray-600">
-            Or call us directly at <a href="tel:+14243332293" className="text-blue-600 font-medium hover:underline"><br />+1 (424) 333-2293</a>
+            Or call us directly at <a href="tel:+14243332293" className="text-gray-800 font-medium hover:underline"><br />+1 (424) 333-2293</a>
           </p>
         </div>
       </section>
