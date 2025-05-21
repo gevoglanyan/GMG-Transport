@@ -72,7 +72,7 @@ const vehicles = [
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
     capacity: "Up to 7",
     luggage: "5-6",
-    rates: "$125/hr - 3 hour minimum"
+    rates: "$125/hr - 3 Hours Minimum"
   },
   {
     title: "Chevy Suburban",
@@ -81,7 +81,7 @@ const vehicles = [
     desc: "Ideal for larger groups and luggage, the Suburban offers comfort, safety, and flexibility for long trips or corporate rides.",
     capacity: "Up to 7",
     luggage: "5-6",
-    rates: "$110/hr - 3 hour minimum"
+    rates: "$115/hr - 3 Hours Minimum"
   },
   {
     title: "GMC Yukon",
@@ -90,7 +90,7 @@ const vehicles = [
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
     capacity: "Up to 7",
     luggage: "5–6",
-    rates: "$115/hr - 3 hour minimum"
+    rates: "$115/hr - 3 Hours Minimum"
   }
 ];
 
