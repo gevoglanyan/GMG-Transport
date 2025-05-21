@@ -70,35 +70,40 @@ const vehicles = [
     image: "/images/Escalade.png",
     alt: "Cadillac Escalade",
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
-    capacity: "Up to 6 Passengers",
-    luggage: "4–5 Suitcases",
-    amenities: "Wi-Fi, Bottled Water, Leather Seats, Climate Control"
+    capacity: "Up to 7",
+    luggage: "5-6",
+    rates: "$125/hr - 3 hour minimum"
   },
   {
     title: "Chevy Suburban",
     image: "/images/Surburban.png",
     alt: "Chevy Suburban",
     desc: "Ideal for larger groups and luggage, the Suburban offers comfort, safety, and flexibility for long trips or corporate rides.",
-    capacity: "Up to 7 Passengers",
-    luggage: "6–7 Suitcases",
-    amenities: "Wi-Fi, Charging Ports, Climate Control, Tinted Windows"
+    capacity: "Up to 7",
+    luggage: "5-6",
+    rates: "$110/hr - 3 hour minimum"
   },
   {
     title: "GMC Yukon",
     image: "/images/Yukon.png",
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
-    capacity: "Up to 6 Passengers",
-    luggage: "5–6 Suitcases",
-    amenities: "Wi-Fi, Premium Sound, Climate Control"
+    capacity: "Up to 7",
+    luggage: "5–6",
+    rates: "$115/hr - 3 hour minimum"
   }
 ];
 
 function VehiclesSection() {
   const [visibleDetails, setVisibleDetails] = useState(null);
+  const [visibleRates, setVisibleRates] = useState(null);
 
   const toggleDetails = (index) => {
     setVisibleDetails(visibleDetails === index ? null : index);
+  };
+
+  const toggleRates = (index) => {
+    setVisibleRates(visibleRates === index ? null : index);
   };
 
   return (
@@ -119,26 +124,35 @@ function VehiclesSection() {
 
                   {visibleDetails === i && (
                     <ul className="text-sm text-gray-600 mb-4 space-y-1">
-                      <br />
                       <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
                       <li><strong>Luggage:</strong> {v.luggage}</li>
-                      <li><strong>Amenities:</strong> {v.amenities}</li>
-                      <br />
                     </ul>
                   )}
+
+                  {visibleRates === i && (
+                    <p className="text-sm text-gray-600 mb-4"><strong>Rates:</strong> {v.rates}. Rates are negotiable.</p>
+                  )}
                 </div>
-                <div className="flex space-x-3 mt-auto">
+                <div className="flex flex-wrap gap-3 mt-auto">
                   <a
                     href="#contact"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition"
                   >
                     Book Now
                   </a>
+
                   <button
                     onClick={() => toggleDetails(i)}
                     className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
                   >
                     {visibleDetails === i ? 'Hide Details' : 'Details'}
+                  </button>
+
+                  <button
+                    onClick={() => toggleRates(i)}
+                    className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
+                  >
+                    {visibleRates === i ? 'Hide Rates' : 'Rates'}
                   </button>
                 </div>
               </div>
@@ -158,7 +172,9 @@ function App() {
     <div className="flex flex-col min-h-screen bg-white text-gray-800 scroll-smooth">
       <header className="bg-gray-800 shadow-md w-full px-4 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">GMG Transportation Inc</h1>
+          <h1 className="text-2xl font-bold text-white text-center sm:text-left">
+            GMG Transportation Inc
+          </h1>
 
           <button
             className="block sm:hidden text-gray-300 hover:text-white focus:outline-none"
@@ -174,13 +190,14 @@ function App() {
             </svg>
           </button>
 
-          <nav className="hidden sm:flex space-x-6 text-sm font-medium text-gray-300">
+          <nav className="hidden sm:flex space-x-6 text-sm font-medium text-gray-300 font-sans">
             <a href="#home" className="hover:text-white">Home</a>
             <a href="#services" className="hover:text-white">Services</a>
             <a href="#about" className="hover:text-white">About</a>
             <a href="#vehicles" className="hover:text-white">Vehicles</a>
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
+
         </div>
 
         {menuOpen && (
@@ -196,13 +213,24 @@ function App() {
         )}
       </header>
 
-
-      <section id="home" className="bg-white h-[60vh] flex items-center px-4 sm:px-6 lg:px-8">
+      <section id="home" className="bg-white h-auto flex flex-col items-center px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-3xl mx-auto px-6 text-gray-800 text-center">
+          <img
+            src="/images/GMG.png"
+            alt="GMG Transportation Logo"
+            className="mx-auto max-w-[340px] sm:max-w-[360px] md:max-w-[320px] h-auto"
+          />
+
           <h2 className="text-4xl font-bold mb-4">Luxury Services</h2>
           <p className="text-lg mb-6">Professional, reliable, and elegant transportation for every occasion.</p>
-          <br />
-          <a href="#contact" className="bg-blue-600 px-6 py-3 rounded text-white font-semibold hover:bg-blue-500 transition">Book a Ride</a>
+
+          <a href="#vehicles" className="bg-blue-600 px-6 py-3 rounded text-white font-semibold hover:bg-blue-500 transition block w-max mx-auto mb-4">
+            View Vehicles
+          </a>
+
+          <a href="#contact" className="bg-blue-600 px-6 py-3 rounded text-white font-semibold hover:bg-blue-500 transition block w-max mx-auto mb-8">
+            Book a Ride
+          </a>
         </div>
       </section>
 
@@ -230,7 +258,7 @@ function App() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold text-black-700 mb-6">About GMG Transportion Inc</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
-            GMG Transportion Inc is dedicated to delivering top-tier transportation services with elegance, professionalism, and reliability. With a fleet of premium vehicles and experienced chauffeurs, we ensure that your ride is not just a journey—but an experience.
+            GMG Transportion Inc is dedicated to delivering top-tier transportation services with elegance, professionalism, and reliability. With a fleet of premium vehicles and experienced chauffeurs, we ensure that your ride is not just a journey but an experience.
           </p>
         </div>
       </section>
@@ -253,7 +281,11 @@ function App() {
       </section>
 
       <footer className="bg-gray-800 text-white text-center py-6">
-        &copy; {new Date().getFullYear()} GMG Transportation Inc. All Rights Reserved.
+        &copy; {new Date().getFullYear()} GMG Transportation Inc.
+        <span className="block md:inline md:ml-2">
+          <br className="block md:hidden" />
+          All Rights Reserved.
+        </span>
       </footer>
     </div>
   );
