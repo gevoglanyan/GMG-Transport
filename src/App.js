@@ -108,7 +108,7 @@ function VehiclesSection() {
 
   return (
     <section id="vehicles" className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <h3 className="text-3xl font-semibold text-black-700 mb-12">Our Vehicles</h3>
         <div className="grid md:grid-cols-3 gap-10">
           {vehicles.map((v, i) => (
@@ -116,8 +116,12 @@ function VehiclesSection() {
               key={i}
               className="shadow rounded overflow-hidden bg-gray-50 flex flex-col justify-between min-h-[520px]"
             >
-              <img src={v.image} alt={v.alt} className="w-full h-48 object-cover" />
-              <div className="p-4 flex flex-col justify-between flex-1 text-left">
+              <img
+                src={v.image}
+                alt={v.alt}
+                className="w-full h-56 sm:h-60 object-contain p-2"
+              />
+              <div className="p-4 sm:p-6 flex flex-col justify-between flex-1 text-left">
                 <div>
                   <h4 className="text-xl font-bold mb-2">{v.title}</h4>
                   <p className="text-gray-700 mb-3">{v.desc}</p>
@@ -130,7 +134,9 @@ function VehiclesSection() {
                   )}
 
                   {visibleRates === i && (
-                    <p className="text-sm text-gray-600 mb-4"><strong>Rates:</strong> {v.rates}. Rates are negotiable.</p>
+                    <p className="text-sm text-gray-600 mb-4">
+                      <strong>Rates:</strong> {v.rates}. Rates are negotiable.
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-wrap gap-3 mt-auto">
@@ -163,6 +169,7 @@ function VehiclesSection() {
     </section>
   );
 }
+
 
 function App() {
 
