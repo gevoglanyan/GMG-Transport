@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { vehicle, rate, hours, date, email } = req.body;
+  const { vehicle, rate, hours, date, email, phone } = req.body;
 
   if (!vehicle || !rate || !hours || !date || !email) {
     return res.status(400).json({ error: 'Missing required booking details' });
@@ -36,39 +36,52 @@ export default async function handler(req, res) {
       custom_fields: [
         {
           key: 'telephone_number',
-          label: { type: 'custom', custom: 'Telephone Number (e.g. 424-333-2293)' },
+          label: {
+            type: 'custom',
+            custom: 'Telephone Number (e.g. 424-333-2293)',
+          },
           type: 'text',
           optional: false,
         },
         {
           key: 'pickup_location',
-          label: { type: 'custom', custom: 'Pickup Address (e.g. Main St)' },
+          label: {
+            type: 'custom',
+            custom: 'Pickup Address (e.g. Main St)',
+          },
           type: 'text',
           optional: false,
         },
         {
           key: 'dropoff_location',
-          label: { type: 'custom', custom: 'Drop-off Address (e.g. LAX)' },
+          label: {
+            type: 'custom',
+            custom: 'Drop-off Address (e.g. LAX)',
+          },
           type: 'text',
           optional: false,
-        }
+        },
       ],
       metadata: {
         vehicle,
         date,
         rate: rate.toString(),
         hours: hours.toString(),
+        phone: phone || 'N/A',
       },
-        success_url: 'http://gmgtransportation.com/success',
-        cancel_url: 'http://gmgtransportation.com/cancel',
+      success_url: 'https://gmgtransportation.com/success',
+      cancel_url: 'https://gmgtransportation.com/cancel',
     });
 
     res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error('Stripe error:', err.message);
-    res.status(500).json({ error: 'Something went wrong' });
+    console.error('Stripe error:', err);
+    res.status(500).json({
+      error: err.message || 'Stripe Checkout session creation failed',
+    });
   }
 }
+
 
 /*
 const express = require('express');
