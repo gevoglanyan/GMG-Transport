@@ -75,9 +75,9 @@ const vehicles = [
     images: ["/images/Escalade.png", "/images/Escalade.png"],
     alt: "Cadillac Escalade",
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
-    capacity: "Up to 7",
-    luggage: "6-7",
-    amenities: "Tinted Windows",
+    capacity: "Up to 6",
+    luggage: "5-6",
+    amenities: "Tinted Windows, WiFi",
     rates: `Minimum of 2 Hours
             2–5 Hours: $150/hr
             6+ Hours: $125/hr`
@@ -89,7 +89,7 @@ const vehicles = [
     alt: "Chevy Suburban",
     desc: "Ideal for larger groups and luggage, it offers comfort, safety, and flexibility for long trips or corporate rides.",
     capacity: "Up to 7",
-    luggage: "6-7",
+    luggage: "5-6",
     amenities: "Tinted Windows",
     rates: `Minimum of 2 Hours
             2-5 Hours: $125/hr
@@ -101,9 +101,9 @@ const vehicles = [
     images: ["/images/Yukon.png", "/images/Yukon.png"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
-    capacity: "Up to 7",
-    luggage: "6-7",
-    amenities: "Tinted Windows",
+    capacity: "Up to 6",
+    luggage: "5-6",
+    amenities: "Captain Seats, Panarmoic Roof",
     rates: `Minimum of 2 Hours
             2-5 Hours: $150/hr
             6+ Hours: $125/hr`
@@ -114,7 +114,7 @@ const vehicles = [
     images: ["/images/Yukon.png", "/images/Yukon.png"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
-    capacity: "Up to 6",
+    capacity: "Up to 7",
     luggage: "5–6",
     amenities: "Tinted Windows",
     rates: `Minimum of 2 Hours
