@@ -90,7 +90,7 @@ const vehicles = [
     desc: "Ideal for larger groups and luggage, it offers comfort, safety, and flexibility for long trips or corporate rides.",
     capacity: "Up to 7",
     luggage: "5-6",
-    amenities: "Tinted Windows",
+    amenities: "Tinted Windows, Charging Cables",
     rates: `Minimum of 2 Hours
             2-5 Hours: $125/hr
             6+ Hours: $100/hr`
@@ -116,7 +116,7 @@ const vehicles = [
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
     capacity: "Up to 7",
     luggage: "5–6",
-    amenities: "Tinted Windows",
+    amenities: "Tinted Windows, Charging Cables",
     rates: `Minimum of 2 Hours
             2-5 Hours: $125/hr
             6+ Hours: $100/hr`
