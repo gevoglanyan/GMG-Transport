@@ -72,7 +72,7 @@ const vehicles = [
   {
     id: "escalade",
     title: "Cadillac Escalade",
-    images: ["/images/Escalade.png", "/images/Escalade.png"],
+    images: ["images/IMG_4003.png", "/images/IMG_4004.png", "/images/IMG_4005.png", "/images/IMG_4006.png", "/images/IMG_4008.png", "/images/IMG_4009.png"],
     alt: "Cadillac Escalade",
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
     capacity: "Up to 6",
@@ -85,7 +85,7 @@ const vehicles = [
   {
     id: "suburban",
     title: "Chevy Suburban",
-    images: ["/images/Surburban.png", "/images/Surburban.png"],
+    images: ["/images/IMG_2386.png"],
     alt: "Chevy Suburban",
     desc: "Ideal for larger groups and luggage, it offers comfort, safety, and flexibility for long trips or corporate rides.",
     capacity: "Up to 7",
@@ -98,7 +98,7 @@ const vehicles = [
   {
     id: "yukon-premium",
     title: "GMC Yukon (Premium)",
-    images: ["/images/Yukon.png", "/images/Yukon.png"],
+    images: ["images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
     capacity: "Up to 6",
@@ -111,7 +111,7 @@ const vehicles = [
   {
     id: "yukon-standard",
     title: "GMC Yukon",
-    images: ["/images/Yukon.png", "/images/Yukon.png"],
+    images: ["images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel, group outings, or upscale business commutes.",
     capacity: "Up to 7",
