@@ -31,7 +31,7 @@ const Booking = ({ vehicle }) => {
     const rate = getHourlyRate(vehicle.id, parsedHours);
 
     if (!rate || !date || !email) {
-      alert("Please provide a valid date, email, and at least 2 hours.");
+      alert("Please provide a valid date, phone number, email, and at least 2 hours.");
       setLoading(false);
       return;
     }
@@ -46,6 +46,7 @@ const Booking = ({ vehicle }) => {
           hours: parsedHours,
           date,
           email,
+          phone
         }),
       });
 
@@ -77,7 +78,7 @@ const Booking = ({ vehicle }) => {
 
       <label className="block font-medium text-gray-700">Phone Number</label>
       <input
-        type="phone"
+        type="tel"
         value={phone}
         onChange={e => setPhone(e.target.value)}
         required
