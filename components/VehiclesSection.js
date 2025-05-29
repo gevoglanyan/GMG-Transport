@@ -4,7 +4,7 @@ import Booking from './Booking';
 const vehicles = [
   {
     id: "escalade",
-    title: "Cadillac Escalade",
+    title: "Cadillac Escalade ESV",
     images: ["images/IMG_4003.png", "/images/IMG_4004.png", "/images/IMG_4005.png", "/images/IMG_4006.png", "/images/IMG_4008.png", "/images/IMG_4009.png"],
     alt: "Cadillac Escalade",
     desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
@@ -17,7 +17,7 @@ const vehicles = [
   },
   {
     id: "suburban",
-    title: "Chevy Suburban",
+    title: "Chevy Suburban LT",
     images: ["/images/IMG_2386.png"],
     alt: "Chevy Suburban",
     desc: "Ideal for larger groups and luggage, it offers comfort, safety, and flexibility for long trips or corporate rides.",
@@ -30,8 +30,9 @@ const vehicles = [
   },
   {
     id: "yukon-premium",
-    title: "GMC Yukon (Premium)",
+    title: "GMC Yukon (Premium) XL",
     images: ["images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
+    images: ["images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel or upscale business commutes.",
     capacity: "Up to 6",
@@ -43,8 +44,8 @@ const vehicles = [
   },
   {
     id: "yukon-standard",
-    title: "GMC Yukon",
-    images: ["images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
+    title: "GMC Yukon XL",
+    images: ["images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
     alt: "GMC Yukon",
     desc: "A versatile SUV that balances comfort and capability—great for family travel or upscale business commutes.",
     capacity: "Up to 7",
