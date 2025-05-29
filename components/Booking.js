@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
 
 const Booking = ({ vehicle }) => {
   const [date, setDate] = useState('');
   const [hours, setHours] = useState(2);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
@@ -75,6 +77,16 @@ const Booking = ({ vehicle }) => {
 
   return (
     <div className="space-y-4 text-left">
+      <label className="block font-medium text-gray-700">Name</label>
+      <input
+        type="text"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        required
+        className="border px-3 py-2 rounded w-full"
+        placeholder="Your Full Name"
+      />
+
       <label className="block font-medium text-gray-700">Email Address</label>
       <input
         type="email"
@@ -86,14 +98,21 @@ const Booking = ({ vehicle }) => {
       />
 
       <label className="block font-medium text-gray-700">Phone Number</label>
-      <input
-        type="tel"
+      <InputMask
+        mask="999-999-9999"
         value={phone}
         onChange={e => setPhone(e.target.value)}
-        required
-        className="border px-3 py-2 rounded w-full"
-        placeholder="424-333-2293"
-      />
+      >
+        {(inputProps) => (
+          <input
+            {...inputProps}
+            type="tel"
+            required
+            className="border px-3 py-2 rounded w-full"
+            placeholder="424-333-2293"
+          />
+        )}
+      </InputMask>
 
       <label className="block font-medium text-gray-700">Select Date</label>
       <input
