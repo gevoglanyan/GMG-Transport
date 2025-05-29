@@ -47,6 +47,7 @@ const Booking = ({ vehicle }) => {
           rate,
           hours: parsedHours,
           date,
+          name,
           email,
           phone
         }),
