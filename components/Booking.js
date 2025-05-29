@@ -50,10 +50,19 @@ const Booking = ({ vehicle }) => {
         }),
       });
 
-      const data = await response.json();
+      let data = null;
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      }
 
       if (!response.ok) {
-        throw new Error(data.error || 'Checkout failed');
+        throw new Error(data?.error || 'Checkout failed');
+      }
+
+      if (!data?.url) {
+        throw new Error("No redirect URL provided.");
       }
 
       window.location.href = data.url;
