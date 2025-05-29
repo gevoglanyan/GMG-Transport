@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Cancel() {
   return (
@@ -16,7 +16,7 @@ export default function Cancel() {
       <p className="mb-6">You can try again or contact us for assistance.</p>
 
       <Link
-        to="/"
+        href="/" 
         className="inline-block bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 py-3 rounded transition"
       >
          Return to Homepage
