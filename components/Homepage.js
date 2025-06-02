@@ -93,8 +93,7 @@ export default function Homepage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold text-black-700 mb-6">About GMG Transportion Inc</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
-            GMG Transportion Inc is dedicated to delivering top-tier transportation services with elegance, professionalism, and reliability.
-            With a fleet of premium vehicles and experienced chauffeurs, we ensure that your ride is not just a journey but an experience.
+            GMG Transportation Inc. has proudly served the Los Angeles area for over 15 years, delivering premium transportation services defined by elegance, professionalism, and reliability. With a fleet of luxury vehicles and experienced chauffeurs, we ensure every ride is more than just a journey—it’s a first-class experience.
           </p>
         </div>
       </section>
