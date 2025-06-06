@@ -57,19 +57,9 @@ const vehicles = [
 ];
 
 function VehiclesSection() {
-  const [visibleDetails, setVisibleDetails] = useState({});
-  const [visibleRates, setVisibleRates] = useState({});
   const [showBookingIndex, setShowBookingIndex] = useState(null);
   const [imageIndexes] = useState({});
   const [lightbox, setLightbox] = useState({ isOpen: false, vehicleIndex: null, imageIndex: 0 });
-
-  const toggleDetails = (index) => {
-    setVisibleDetails(prev => ({ ...prev, [index]: !prev[index] }));
-  };
-
-  const toggleRates = (index) => {
-    setVisibleRates(prev => ({ ...prev, [index]: !prev[index] }));
-  };
 
   const toggleBooking = (index) => {
     setShowBookingIndex(showBookingIndex === index ? null : index);
@@ -93,10 +83,7 @@ function VehiclesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {vehicles.map((v, i) => (
-            <div
-              key={i}
-              className="shadow rounded overflow-hidden bg-gray-50 flex flex-col justify-between min-h-[580px]"
-            >
+            <div key={i} className="shadow rounded overflow-hidden bg-gray-50 flex flex-col justify-between min-h-[580px]">
               <div className="relative">
                 {Array.isArray(v.images) && v.images.length > 0 ? (
                   <img
@@ -115,24 +102,19 @@ function VehiclesSection() {
               <div className="p-4 sm:p-6 flex flex-col justify-between flex-1 text-left h-full">
                 <div className="flex-1">
                   <h4 className="text-xl font-bold mb-2">{v.title}</h4>
-                  <p className="text-gray-700 mb-3">{v.desc}</p>
+                  <div className="text-gray-700 mb-3 min-h-[140px]">
+                    <p>{v.desc}</p>
+                  </div>
 
-                  {visibleDetails[i] && (
-                    <ul className="text-sm text-gray-600 space-y-1 mb-3">
-                      <br />
-                      <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
-                      <li><strong>Luggage:</strong> {v.luggage}</li>
-                      <li><strong>Amenities:</strong> {v.amenities}</li>
-                      <br />
-                    </ul>
-                  )}
+                  <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                    <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
+                    <li><strong>Luggage:</strong> {v.luggage}</li>
+                    <li><strong>Amenities:</strong> {v.amenities}</li>
+                  </ul>
 
-                  {visibleRates[i] && (
-                    <p className="text-sm text-gray-600 whitespace-pre-line mb-3">
-                      <strong>Rates:</strong> {v.rates}
-                      <br />
-                    </p>
-                  )}
+                  <p className="text-sm text-gray-600 whitespace-pre-line mb-3">
+                    <strong>Rates:</strong> {v.rates}
+                  </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-auto">
@@ -141,20 +123,6 @@ function VehiclesSection() {
                     className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded text-sm font-medium transition"
                   >
                     {showBookingIndex === i ? 'Close Booking' : 'Book Now'}
-                  </button>
-
-                  <button
-                    onClick={() => toggleDetails(i)}
-                    className="border border-gray-800 text-gray-800 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
-                  >
-                    {visibleDetails[i] ? 'Hide Details' : 'Details'}
-                  </button>
-
-                  <button
-                    onClick={() => toggleRates(i)}
-                    className="border border-gray-800 text-gray-800 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition"
-                  >
-                    {visibleRates[i] ? 'Hide Rates' : 'Rates'}
                   </button>
                 </div>
 
@@ -176,15 +144,12 @@ function VehiclesSection() {
                 alt=""
                 className="max-h-[90vh] max-w-[90vw] sm:max-h-[80vh] sm:max-w-3xl object-contain rounded shadow-lg"
               />
-
               <button
                 onClick={() => setLightbox({ isOpen: false, vehicleIndex: null, imageIndex: 0 })}
                 className="absolute top-4 right-4 text-white text-4xl font-bold z-10"
-                aria-label="Close"
               >
                 ×
               </button>
-
               {vehicles[lightbox.vehicleIndex].images.length > 1 && (
                 <>
                   <button
@@ -197,11 +162,9 @@ function VehiclesSection() {
                       }))
                     }
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
-                    aria-label="Previous"
                   >
                     ‹
                   </button>
-
                   <button
                     onClick={() =>
                       setLightbox(prev => ({
@@ -211,7 +174,6 @@ function VehiclesSection() {
                       }))
                     }
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
-                    aria-label="Next"
                   >
                     ›
                   </button>
