@@ -27,13 +27,13 @@ export default function Homepage() {
 
           <a
             href="/fleet"
-            className="bg-gray-800 px-6 py-3 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto mb-4"
+            className="bg-gray-800 px-6 py-4 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto mb-4"
           >
             Book a Ride
           </a>
           <a
             href="/contact"
-            className="bg-gray-800 px-6 py-3 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto"
+            className="bg-gray-800 px-7 py-4 rounded text-white font-semibold hover:bg-gray-900 transition block w-max mx-auto"
           >
             Contact Us
           </a>
