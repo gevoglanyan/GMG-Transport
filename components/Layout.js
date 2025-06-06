@@ -10,11 +10,11 @@ export default function Layout({ children }) {
           <nav className="hidden sm:flex space-x-6 text-base sm:text-xl font-medium text-gray-300 font-sans mx-auto">
             <a href="/" className="hover:text-white">Home</a>
             <a href="/services" className="hover:text-white">Our Services</a>
-            <a href="/about" className="hover:text-white">About Us</a>
             <a href="/fleet" className="hover:text-white">Our Fleet</a>
             <a href="/faqs" className="hover:text-white">FAQs</a>
             <a href="/reviews" className="hover:text-white">Reviews</a>
-            <a href="/#contact" className="hover:text-white">Contact</a>
+            <a href="/about" className="hover:text-white">About Us</a>
+            <a href="/#contact" className="hover:text-white">Contact Us</a>
           </nav>
 
           <button
