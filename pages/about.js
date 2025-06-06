@@ -16,9 +16,9 @@ export default function AboutPage() {
           <br />
 
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            GMG Transportation Inc. has proudly served the Los Angeles area for over 15 years, delivering premium transportation
+            GMG Transportation, Inc has proudly served the Los Angeles area for over 15 years, delivering premium transportation
             services defined by elegance, professionalism, and reliability. With a fleet of luxury vehicles and experienced chauffeurs,
-            we ensure every ride is more than just a journey—it’s a first-class experience.
+            we ensure every ride is more than just a journey — it’s a first-class experience.
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -27,8 +27,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            We take immense pride in our modern fleet, which includes executive sedans, luxury SUVs, stretch limousines, and party-ready sprinter vans—
-            all meticulously maintained and detailed for your comfort. Our chauffeurs are professionally trained, punctual, courteous, and committed to the highest standards of service.
+            We take immense pride in our modern fleet, which includes luxury SUVs - all meticulously maintained and detailed for your comfort. Our chauffeurs are professionally trained, punctual, courteous, and committed to the highest standards of service.
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed mb-6">

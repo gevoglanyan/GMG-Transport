@@ -8,7 +8,6 @@ export default function Layout({ children }) {
       <header className="bg-gray-800 shadow-md w-full px-4 py-4 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between sm:justify-center">
           <nav className="hidden sm:flex space-x-6 text-base sm:text-xl font-medium text-gray-300 font-sans mx-auto">
-
             <a href="/" className="hover:text-white">Home</a>
             <a href="/services" className="hover:text-white">Our Services</a>
             <a href="/about" className="hover:text-white">About Us</a>
@@ -45,12 +44,12 @@ export default function Layout({ children }) {
               </svg>
             </button>
             <a href="/" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Home</a>
-            <a href="/services" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Services</a>
-            <a href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">About</a>
-            <a href="/fleet" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Fleet</a>
+            <a href="/services" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Our Services</a>
+            <a href="/fleet" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Our Fleet</a>
             <a href="/faqs" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">FAQs</a>
             <a href="/reviews" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Reviews</a>
-            <a href="/#contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact</a>
+            <a href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">About Us</a>
+            <a href="/#contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact Us</a>
           </div>
         )}
       </header>
@@ -87,12 +86,12 @@ export default function Layout({ children }) {
               <h4 className="text-xl font-semibold mb-2">Contact Information</h4>
               <p>
                 <a href="mailto:gmgtransinc@gmail.com" className="hover:underline">
-                  gmgtranspinc@gmail.com
+                  gmgtransinc@gmail.com
                 </a>
               </p>
               <p className="mt-1">
                 <a href="tel:+14243332293" className="hover:underline">
-                  (424) 333-2293
+                  424-333-2293
                 </a>
               </p>
               <p className="mt-4">Monday – Sunday</p>
