@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold mb-6 text-black-700">Contact Us</h3>
           <p className="text-gray-700 mb-8">
-            Have questions about our services? Need help with a booking? Fill out the form below or reach out directly—we’re here to help.
+            Have questions about our services? Need help with a booking? Fill out the form below or reach out directly — we’re here to help.
           </p>
 
           <ContactForm />
