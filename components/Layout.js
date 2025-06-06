@@ -14,7 +14,7 @@ export default function Layout({ children }) {
             <a href="/faqs" className="hover:text-white">FAQs</a>
             <a href="/reviews" className="hover:text-white">Reviews</a>
             <a href="/about" className="hover:text-white">About Us</a>
-            <a href="/#contact" className="hover:text-white">Contact Us</a>
+            <a href="/contact" className="hover:text-white">Contact Us</a>
           </nav>
 
           <button
@@ -49,7 +49,7 @@ export default function Layout({ children }) {
             <a href="/faqs" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">FAQs</a>
             <a href="/reviews" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Reviews</a>
             <a href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">About Us</a>
-            <a href="/#contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact Us</a>
+            <a href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">Contact Us</a>
           </div>
         )}
       </header>
@@ -75,13 +75,13 @@ export default function Layout({ children }) {
                 <li><a href="/" className="hover:underline">Home</a></li>
                 <li><a href="/services" className="hover:underline">Our Services</a></li>
                 <li><a href="/fleet" className="hover:underline">Our Fleet</a></li>
-                <li><a href="/about" className="hover:underline">About Us</a></li>
                 <li><a href="/faqs" className="hover:underline">FAQs</a></li>
                 <li><a href="/reviews" className="hover:underline">Reviews</a></li>
+                <li><a href="/about" className="hover:underline">About Us</a></li>
                 <li><a href="/contact" className="hover:underline">Contact Us</a></li>
               </ul>
             </div>
-
+        
             <div>
               <h4 className="text-xl font-semibold mb-2">Contact Information</h4>
               <p>
@@ -94,9 +94,6 @@ export default function Layout({ children }) {
                   424-333-2293
                 </a>
               </p>
-              <p className="mt-4">Monday – Sunday</p>
-              <p>8:00 AM – 10:00 PM</p>
-              <br />
               <p className="mt-4">Based in Los Angeles, California</p>
             </div>
           </div>

@@ -11,7 +11,9 @@ export default function AboutPage() {
 
       <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-semibold text-black-700 mb-6">About GMG Transportation Inc</h3>
+          <h3 className="text-4xl font-semibold text-black-700 mb-6">About 
+                                                                    <br />GMG Transportation, Inc
+          </h3>
 
           <br />
 
