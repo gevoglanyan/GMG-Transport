@@ -5,12 +5,12 @@ const vehicles = [
   {
     id: "escalade",
     title: "Cadillac Escalade ESV",
-    images: ["images/IMG_4003.png", "/images/IMG_4004.png", "/images/IMG_4005.png", "/images/IMG_4006.png", "/images/IMG_4008.png", "/images/IMG_4009.png"],
+    images: ["/images/IMG_4003.png", "/images/IMG_4004.png", "/images/IMG_4005.png", "/images/IMG_4006.png", "/images/IMG_4008.png", "/images/IMG_4009.png"],
     alt: "Cadillac Escalade",
-    desc: "Ride in bold elegance with the Cadillac Escalade—perfect for weddings, red carpet events, and VIP airport pickups.",
-    capacity: "Up to 6",
-    luggage: "5-6",
-    amenities: "Tinted Windows, WiFi",
+    desc: "Make a bold entrance in the iconic Cadillac Escalade ESV — where power meets prestige. Ideal for weddings, VIP airport service, or corporate executive travel, this full-sized luxury SUV features an extended cabin for maximum legroom, high-end leather seating, and a smooth, quiet ride.",
+    capacity: "Up to 6 passengers",
+    luggage: "5–6 large bags",
+    amenities: "Premium Leather Interior, Rear Climate Controls, WiFi, Privacy-Tinted Windows, Phone Charging Ports, Premium Sound System",
     rates: `Minimum of 2 Hours
             2–5 Hours: $150/hr
             6+ Hours: $125/hr`
@@ -20,39 +20,38 @@ const vehicles = [
     title: "Chevrolet Suburban",
     images: ["/images/IMG_2386.png"],
     alt: "Chevy Suburban",
-    desc: "Ideal for larger groups and luggage, it offers comfort, safety, and flexibility for long trips or corporate rides.",
-    capacity: "Up to 7",
-    luggage: "5-6",
-    amenities: "Tinted Windows, Charging Cables",
+    desc: "Dependable and spacious, the Chevy Suburban offers exceptional comfort and storage. It’s the perfect ride for families, groups with luggage, or team travel. With versatile seating, climate control, and smooth handling, it’s designed for long rides and day-to-day executive transport alike.",
+    capacity: "Up to 7 passengers",
+    luggage: "5–6 large bags",
+    amenities: "Tinted Windows, Rear A/C Vents, USB Charging Cables, Spacious Trunk, Bench or Captain Seat Configurations",
     rates: `Minimum of 2 Hours
-            2-5 Hours: $125/hr
+            2–5 Hours: $125/hr
             6+ Hours: $100/hr`
   },
   {
     id: "yukon-premium",
     title: "GMC Yukon XL (Premium)",
-    images: ["images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
-    images: ["images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
-    alt: "GMC Yukon",
-    desc: "A versatile SUV that balances comfort and capability—great for family travel or upscale business commutes.",
-    capacity: "Up to 6",
-    luggage: "5-6",
-    amenities: "Captain Seats, Panarmoic Roof",
+    images: ["/images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
+    alt: "GMC Yukon Premium",
+    desc: "For those who want style with substance, the premium Yukon XL delivers. Featuring luxurious captain’s chairs, an extra-large panoramic sunroof, and refined materials throughout, it’s built for first-class experiences. Ideal for business travelers, couples, or small VIP groups.",
+    capacity: "Up to 6 passengers",
+    luggage: "5–6 large bags",
+    amenities: "Captain's Chairs, Panoramic Sunroof, Ambient Interior Lighting, USB-C Ports, HD Navigation System, Tri-Zone Climate Control",
     rates: `Minimum of 2 Hours
-            2-5 Hours: $150/hr
+            2–5 Hours: $150/hr
             6+ Hours: $125/hr`
   },
   {
     id: "yukon-standard",
     title: "GMC Yukon XL",
-    images: ["images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
+    images: ["/images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
     alt: "GMC Yukon",
-    desc: "A versatile SUV that balances comfort and capability—great for family travel or upscale business commutes.",
-    capacity: "Up to 7",
-    luggage: "5–6",
-    amenities: "Tinted Windows, Charging Cables",
+    desc: "Spacious, stylish, and reliable — the standard Yukon XL offers roomy seating and a powerful drive, making it great for both long-distance travel and local event shuttles. It's a customer favorite for airport runs, business groups, and casual bookings alike.",
+    capacity: "Up to 7 passengers",
+    luggage: "5–6 large bags",
+    amenities: "Tinted Windows, USB Ports, Rear Seat Controls, Spacious Third Row, Fold-Flat Seating",
     rates: `Minimum of 2 Hours
-            2-5 Hours: $125/hr
+            2–5 Hours: $125/hr
             6+ Hours: $100/hr`
   }
 ];
@@ -65,17 +64,11 @@ function VehiclesSection() {
   const [lightbox, setLightbox] = useState({ isOpen: false, vehicleIndex: null, imageIndex: 0 });
 
   const toggleDetails = (index) => {
-    setVisibleDetails(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
+    setVisibleDetails(prev => ({ ...prev, [index]: !prev[index] }));
   };
 
   const toggleRates = (index) => {
-    setVisibleRates(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
+    setVisibleRates(prev => ({ ...prev, [index]: !prev[index] }));
   };
 
   const toggleBooking = (index) => {
@@ -87,26 +80,22 @@ function VehiclesSection() {
   };
 
   useEffect(() => {
-  if (lightbox.isOpen) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
-
-  return () => {
-    document.body.style.overflow = '';
-  };
-}, [lightbox.isOpen]);
+    document.body.style.overflow = lightbox.isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [lightbox.isOpen]);
 
   return (
-    <section id="vehicles" className="py-16 bg-white">
+    <section id="vehicles" className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <h3 className="text-3xl font-semibold text-black-700 mb-12">Our Fleet</h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <h3 className="text-4xl font-semibold text-black-700 mb-12">Our Fleet</h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {vehicles.map((v, i) => (
             <div
               key={i}
-              className="shadow rounded overflow-hidden bg-gray-50 flex flex-col justify-between min-h-[520px]"
+              className="shadow rounded overflow-hidden bg-gray-50 flex flex-col justify-between min-h-[580px]"
             >
               <div className="relative">
                 {Array.isArray(v.images) && v.images.length > 0 ? (
@@ -128,26 +117,21 @@ function VehiclesSection() {
                   <h4 className="text-xl font-bold mb-2">{v.title}</h4>
                   <p className="text-gray-700 mb-3">{v.desc}</p>
 
-                  <div className={`min-h-[24px] ${visibleDetails[i] ? 'mb-3' : 'mb-1'}`}>
-                    {visibleDetails[i] && (
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        <br />
-                        <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
-                        <li><strong>Luggage:</strong> {v.luggage}</li>
-                        <li><strong>Amenities:</strong> {v.amenities}</li>
-                      </ul>
-                    )}
-                  </div>
+                  {visibleDetails[i] && (
+                    <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                      <br />
+                      <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
+                      <li><strong>Luggage:</strong> {v.luggage}</li>
+                      <li><strong>Amenities:</strong> {v.amenities}</li>
+                      <br />
+                    </ul>
+                  )}
 
-                  <div className={`min-h-[32px] ${visibleRates[i] ? 'mb-3' : 'mb-1'}`}>
-                    {visibleRates[i] && (
-                      <p className="text-sm text-gray-600 whitespace-pre-line">
-                        <br />
-                        <strong>Rates:</strong> {v.rates}
-                        <br /> <br />
-                      </p>
-                    )}
-                  </div>
+                  {visibleRates[i] && (
+                    <p className="text-sm text-gray-600 whitespace-pre-line mb-3">
+                      <strong>Rates:</strong> {v.rates}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-auto">
@@ -201,36 +185,36 @@ function VehiclesSection() {
               </button>
 
               {vehicles[lightbox.vehicleIndex].images.length > 1 && (
-                <button
-                  onClick={() =>
-                    setLightbox(prev => ({
-                      ...prev,
-                      imageIndex:
-                        (prev.imageIndex - 1 + vehicles[prev.vehicleIndex].images.length) %
-                        vehicles[prev.vehicleIndex].images.length,
-                    }))
-                  }
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
-                  aria-label="Previous"
-                >
-                  ‹
-                </button>
-              )}
+                <>
+                  <button
+                    onClick={() =>
+                      setLightbox(prev => ({
+                        ...prev,
+                        imageIndex:
+                          (prev.imageIndex - 1 + vehicles[prev.vehicleIndex].images.length) %
+                          vehicles[prev.vehicleIndex].images.length,
+                      }))
+                    }
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
+                    aria-label="Previous"
+                  >
+                    ‹
+                  </button>
 
-              {vehicles[lightbox.vehicleIndex].images.length > 1 && (
-                <button
-                  onClick={() =>
-                    setLightbox(prev => ({
-                      ...prev,
-                      imageIndex:
-                        (prev.imageIndex + 1) % vehicles[prev.vehicleIndex].images.length,
-                    }))
-                  }
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
-                  aria-label="Next"
-                >
-                  ›
-                </button>
+                  <button
+                    onClick={() =>
+                      setLightbox(prev => ({
+                        ...prev,
+                        imageIndex:
+                          (prev.imageIndex + 1) % vehicles[prev.vehicleIndex].images.length,
+                      }))
+                    }
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-10"
+                    aria-label="Next"
+                  >
+                    ›
+                  </button>
+                </>
               )}
             </div>
           </div>

@@ -103,6 +103,7 @@ const Booking = ({ vehicle }) => {
         mask="999-999-9999"
         value={phone}
         onChange={e => setPhone(e.target.value)}
+        maskChar={null}
       >
         {(inputProps) => (
           <input

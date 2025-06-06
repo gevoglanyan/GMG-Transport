@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mblobbgk");
+  const [phone, setPhone] = useState('');
 
   if (state.succeeded) {
     return <p className="text-green-600 font-semibold">Thank you! Your message has been sent.</p>;
@@ -16,7 +18,7 @@ export default function ContactForm() {
         type="text"
         name="name"
         required
-        placeholder="Your Name"
+        placeholder="GMG Transportation, Inc"
         className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -27,20 +29,28 @@ export default function ContactForm() {
         type="email"
         name="email"
         required
-        placeholder="Your Email"
+        placeholder="gmgtransinc@gmail.com"
         className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-      <label htmlFor="phone" className="block font-medium text-gray-700">Phone Number</label>
-      <input
-        id="phone"
-        type="tel"
-        name="phone"
-        placeholder="Your Phone Number"
-        className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+      <label className="block font-medium text-gray-700 mb-1">Phone Number</label>
+      <InputMask
+        mask="999-999-9999"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
+        maskChar={null}
+      >
+        {(inputProps) => (
+          <input
+            {...inputProps}
+            type="tel"
+            required
+            className="border px-3 py-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="424-333-2293"
+          />
+        )}
+      </InputMask>
 
       <label htmlFor="message" className="block font-medium text-gray-700">Message</label>
       <textarea
@@ -48,7 +58,7 @@ export default function ContactForm() {
         name="message"
         rows="4"
         required
-        placeholder="Your message here..."
+        placeholder="Type a message that moves us..."
         className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
