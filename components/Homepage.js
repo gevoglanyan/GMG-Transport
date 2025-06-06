@@ -17,6 +17,9 @@ export default function Homepage() {
             alt="GMG Transportation Logo"
             className="mx-auto w-[90%] max-w-[350px] h-auto border-4 border-gray-800 rounded mb-8"
           />
+
+          <br />
+          
           <h2 className="text-4xl font-bold mb-4">Luxury Services</h2>
           <p className="text-lg mb-6 text-gray-700">
             Professional, reliable, and elegant transportation for every occasion. Let us take care of your journey.

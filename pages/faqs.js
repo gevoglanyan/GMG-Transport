@@ -80,7 +80,7 @@ export default function FaqPage() {
             <div>
               <h4 className="text-lg font-semibold text-gray-800">How do I contact you if my plans change?</h4>
               <p className="text-gray-700 mt-1">
-                You can call us anytime at <a href="tel:+14243332293" className="text-gray-900 hover:underline">+1 (424) 333-2293</a> or use the contact form on our website.
+                You can call us anytime at <a href="tel:+14243332293" className="text-gray-900 hover:underline">424-333-2293</a> or use the contact form on our website.
                 For urgent updates (e.g., flight delays), please call directly to ensure prompt adjustments.
               </p>
             </div>

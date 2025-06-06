@@ -123,7 +123,7 @@ function VehiclesSection() {
                       <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
                       <li><strong>Luggage:</strong> {v.luggage}</li>
                       <li><strong>Amenities:</strong> {v.amenities}</li>
-                      <br />
+                      <br /> <br />
                     </ul>
                   )}
 
