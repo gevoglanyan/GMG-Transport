@@ -8,12 +8,14 @@ function createLineItem(vehicle, date, rate, hours) {
       product_data: {
         name: `${vehicle} Reservation on ${date}`,
         description: `Booking for ${hours} hour(s) at $${rate}/hr`,
+        images: ['https://gmgtransportation.com/images/GMG.png'],
       },
       unit_amount: rate * 100,
     },
     quantity: hours,
   };
 }
+
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -33,26 +35,6 @@ export default async function handler(req, res) {
       customer_email: email,
       customer_creation: 'always',
       line_items: [createLineItem(vehicle, date, rate, hours)],
-      custom_fields: [
-        {
-          key: 'pickup_location',
-          label: {
-            type: 'custom',
-            custom: 'Pickup Address (e.g. Main St)',
-          },
-          type: 'text',
-          optional: false,
-        },
-        {
-          key: 'dropoff_location',
-          label: {
-            type: 'custom',
-            custom: 'Drop-off Address (e.g. LAX)',
-          },
-          type: 'text',
-          optional: false,
-        },
-      ],
       metadata: {
         vehicle,
         date,

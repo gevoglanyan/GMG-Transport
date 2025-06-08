@@ -49,6 +49,15 @@ export default function Homepage() {
         </a>
       </h1>
 
+      <h1 className="text-sm font-semibold text-gray-800 text-center">
+        <a
+          href="mailto:gmgtransinc@gmail.com"
+          className="text-gray-800 text-sm font-medium hover:underline block mt-2 mx-auto"
+        >
+          gmgtransinc@gmail.com
+        </a>
+      </h1>
+
       <br /> <br />
 
     </>

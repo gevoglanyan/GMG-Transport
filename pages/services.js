@@ -1,12 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
+import Booking from '../components/Booking';
+import Link from 'next/link';
 
 export default function ServicesPage() {
   return (
     <>
       <Head>
         <title>Services | GMG Transportation</title>
-        <meta name="description" content="Explore GMG's premium transportation services including airport transfers, corporate travel, event rides, and more." />
+        <meta
+          name="description"
+          content="Explore GMG's premium transportation services including airport transfers, corporate travel, event rides, and more."
+        />
       </Head>
 
       <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
@@ -67,6 +72,20 @@ export default function ServicesPage() {
                 Get personalized transportation on your schedule with premium service every step of the way.
               </p>
             </div>
+          </div>
+
+          <div className="mt-20 max-w-8xl mx-auto text-center" id="booking">
+            <h4 className="text-2xl font-bold mb-4">Book Your Ride</h4>
+            <p className="text-gray-700 mb-6">
+              Ready to schedule your journey? Provide your trip details and we’ll handle the rest.
+            </p>
+            <p className="text-gray-600 mb-8">
+                Want to learn more about our vehicles?{' '}
+                <Link href="/fleet" className="text-green-600 underline hover:text-blue-800">
+                    View Our Fleet
+                </Link>
+            </p>
+            <Booking />
           </div>
         </div>
       </section>

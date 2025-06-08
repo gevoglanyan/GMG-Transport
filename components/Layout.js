@@ -67,6 +67,21 @@ export default function Layout({ children }) {
               <br />
 
               <p className="mt-2">Have questions? Reach out anytime!</p>
+
+              <br />
+
+              <p className="mt-4">
+                Created by{" "}
+                <a
+                  href="https://gevoglanyan.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white-600 hover:underline"
+                >
+                  Harutyun Gevoglanyan
+                </a>
+              </p>
+
             </div>
 
             <div>

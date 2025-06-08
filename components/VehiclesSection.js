@@ -57,13 +57,8 @@ const vehicles = [
 ];
 
 function VehiclesSection() {
-  const [showBookingIndex, setShowBookingIndex] = useState(null);
   const [imageIndexes] = useState({});
   const [lightbox, setLightbox] = useState({ isOpen: false, vehicleIndex: null, imageIndex: 0 });
-
-  const toggleBooking = (index) => {
-    setShowBookingIndex(showBookingIndex === index ? null : index);
-  };
 
   const handleImageClick = (vehicleIndex, imageIndex) => {
     setLightbox({ isOpen: true, vehicleIndex, imageIndex });
@@ -107,30 +102,17 @@ function VehiclesSection() {
                   </div>
 
                   <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                    <br />
                     <li><strong>Passenger Capacity:</strong> {v.capacity}</li>
                     <li><strong>Luggage:</strong> {v.luggage}</li>
                     <li><strong>Amenities:</strong> {v.amenities}</li>
+                    <br />
                   </ul>
 
                   <p className="text-sm text-gray-600 whitespace-pre-line mb-3">
                     <strong>Rates:</strong> {v.rates}
                   </p>
                 </div>
-
-                <div className="flex flex-wrap gap-3 mt-auto">
-                  <button
-                    onClick={() => toggleBooking(i)}
-                    className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded text-sm font-medium transition"
-                  >
-                    {showBookingIndex === i ? 'Close Booking' : 'Book Now'}
-                  </button>
-                </div>
-
-                {showBookingIndex === i && (
-                  <div className="mt-6 border-t pt-4">
-                    <Booking vehicle={v} />
-                  </div>
-                )}
               </div>
             </div>
           ))}
