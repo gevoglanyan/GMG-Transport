@@ -151,8 +151,8 @@ const Booking = () => {
               </div>
             )}
 
-            <div className="flex gap-4">
-              <div className="w-1/2">
+           <div className="flex flex-col sm:flex-row gap-4">
+              <div className="w-full sm:w-1/2">
                 <label className="block text-sm font-medium">Pickup Date</label>
                 <input
                   type="date"
@@ -161,7 +161,7 @@ const Booking = () => {
                   className="w-full border px-3 py-2 rounded"
                 />
               </div>
-              <div className="w-1/2">
+              <div className="w-full sm:w-1/2">
                 <label className="block text-sm font-medium">Pickup Time</label>
                 <input
                   type="time"
@@ -266,17 +266,17 @@ const Booking = () => {
 
             <br/>
 
-            {/*
+            {bookingType === 'hourly' && (
+              <button
+                type="button"
+                onClick={addStop}
+                className="mt-2 text-sm font-bold text-black hover:underline"
+              >
+                + ADD A STOP
 
-            <button
-              type="button"
-              onClick={addStop}
-              className="mt-2 text-sm font-bold text-black hover:underline"
-            >
-              + ADD STOP
-            </button>
-
-            */}
+                <br /> <br />
+              </button>
+            )}
 
             <div>
               <label className="text-sm font-medium">Dropoff Type</label>

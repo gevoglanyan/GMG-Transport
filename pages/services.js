@@ -81,7 +81,7 @@ export default function ServicesPage() {
             </p>
             <p className="text-gray-600 mb-8">
                 Want to learn more about our vehicles?{' '}
-                <Link href="/fleet" className="text-green-600 underline hover:text-blue-800">
+                <Link href="/fleet" className="text-black font-semibold">
                     View Our Fleet
                 </Link>
             </p>
