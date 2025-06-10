@@ -106,12 +106,18 @@ const Booking = () => {
   };
 
   return (
-    <div className="bg-white mt-16 p-6 rounded shadow w-full max-w-[1400px] mx-auto">
+    <div className="bg-white mt-10 p-4 sm:p-6 rounded shadow w-full max-w-[1400px] mx-auto">
       <div className="mb-6">
-        <div className="flex items-center justify-between text-sm text-gray-500 font-medium border-b pb-4">
-          <span className={step === 1 ? "text-black font-semibold" : ""}>1. WHERE & WHEN</span>
-          <span className={step === 2 ? "text-black font-semibold" : ""}>2. SELECT VEHICLE</span>
-          <span className={step === 3 ? "text-black font-semibold" : ""}>3. PAYMENT & CONFIRM</span>
+        <div className="flex flex-nowrap items-center justify-between overflow-x-auto no-scrollbar text-sm text-gray-500 font-medium border-b pb-4 gap-4 sm:gap-6">
+          <span className={step === 1 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+            1. WHERE & WHEN
+          </span>
+          <span className={step === 2 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+            2. SELECT VEHICLE
+          </span>
+          <span className={step === 3 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+            3. PAYMENT & CONFIRM
+          </span>
         </div>
       </div>
 
@@ -354,17 +360,27 @@ const Booking = () => {
 
             <br/>
 
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 gap-y-6 text-center">
               {[{ label: 'Travellers', value: travelers, setter: setTravelers, min: 1 },
                 { label: 'Kids', value: kids, setter: setKids, min: 0 },
                 { label: 'Bags', value: bags, setter: setBags, min: 0 }]
                 .map(({ label, value, setter, min }) => (
                   <div key={label}>
-                    <label className="text-sm font-medium block mb-1">{label}</label>
-                    <div className="flex items-center justify-between border rounded overflow-hidden w-full max-w-[8rem] mx-auto">
-                      <button onClick={() => setter(Math.max(min, value - 1))} className="px-3 py-1 bg-gray-100">−</button>
-                      <span className="px-4 text-center w-full">{value}</span>
-                      <button onClick={() => setter(value + 1)} className="px-3 py-1 bg-gray-100">+</button>
+                    <label className="text-sm font-medium block mb-2">{label}</label>
+                    <div className="flex items-center justify-between border rounded overflow-hidden max-w-[10rem] mx-auto">
+                      <button
+                        onClick={() => setter(Math.max(min, value - 1))}
+                        className="px-4 py-2 bg-gray-100 text-lg"
+                      >
+                        −
+                      </button>
+                      <span className="px-4 py-2 text-base w-full">{value}</span>
+                      <button
+                        onClick={() => setter(value + 1)}
+                        className="px-4 py-2 bg-gray-100 text-lg"
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
               ))}
