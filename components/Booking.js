@@ -108,14 +108,14 @@ const Booking = () => {
   return (
     <div className="bg-white mt-10 p-4 sm:p-6 rounded shadow w-full max-w-[1400px] mx-auto">
       <div className="mb-6">
-        <div className="flex flex-nowrap items-center justify-between overflow-x-auto no-scrollbar text-sm text-gray-500 font-medium border-b pb-4 gap-4 sm:gap-6">
-          <span className={step === 1 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+        <div className="flex items-center justify-between text-[11px] sm:text-sm text-gray-500 font-medium border-b pb-3 sm:pb-4">
+          <span className={step === 1 ? "text-black font-semibold" : ""}>
             1. WHERE & WHEN
           </span>
-          <span className={step === 2 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+          <span className={step === 2 ? "text-black font-semibold" : ""}>
             2. SELECT VEHICLE
           </span>
-          <span className={step === 3 ? "text-black font-semibold whitespace-nowrap" : "whitespace-nowrap"}>
+          <span className={step === 3 ? "text-black font-semibold" : ""}>
             3. PAYMENT & CONFIRM
           </span>
         </div>
@@ -200,7 +200,7 @@ const Booking = () => {
             />
 
             {pickupType === 'airport' && (
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Airline</label>
                   <select
@@ -211,12 +211,12 @@ const Booking = () => {
                     <option value=""></option>
                     <option value="American ">American</option>
                     <option value="Delta ">Delta</option>
-                    <option value="United ">United </option>
-                    <option value="Southwest ">Southwest </option>
+                    <option value="United ">United</option>
+                    <option value="Southwest ">Southwest</option>
                     <option value="JetBlue">JetBlue</option>
-                    <option value="Alaska">Alaska </option>
-                    <option value="Spirit">Spirit </option>
-                    <option value="Frontier">Frontier </option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Spirit">Spirit</option>
+                    <option value="Frontier">Frontier</option>
                     <option value="Other">Other</option>
                   </select>
 
@@ -232,7 +232,7 @@ const Booking = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium">Flight #</label>
+                  <label className="block text-sm font-medium mb-1">Flight #</label>
                   <input
                     type="text"
                     value={flightNumber}
@@ -240,8 +240,9 @@ const Booking = () => {
                     className="w-full border px-3 py-2 rounded"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium">Arrival Time</label>
+                  <label className="block text-sm font-medium mb-1">Arrival Time</label>
                   <input
                     type="time"
                     value={arrivalTime}
@@ -304,25 +305,23 @@ const Booking = () => {
             />
 
             {dropoffType === 'airport' && (
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium">Airline</label>
+                  <label className="block text-sm font-medium mb-1">Airline</label>
                   <select
-                    type="text"
                     value={dropAirline}
                     onChange={e => setDropAirline(e.target.value)}
                     className="w-full border px-3 py-2 rounded"
                   >
-
-                   <option value=""></option>
+                    <option value=""></option>
                     <option value="American ">American</option>
                     <option value="Delta ">Delta</option>
-                    <option value="United ">United </option>
-                    <option value="Southwest ">Southwest </option>
+                    <option value="United ">United</option>
+                    <option value="Southwest ">Southwest</option>
                     <option value="JetBlue">JetBlue</option>
-                    <option value="Alaska">Alaska </option>
-                    <option value="Spirit">Spirit </option>
-                    <option value="Frontier">Frontier </option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Spirit">Spirit</option>
+                    <option value="Frontier">Frontier</option>
                     <option value="Other">Other</option>
                   </select>
 
@@ -334,11 +333,11 @@ const Booking = () => {
                       onChange={(e) => setCustomAirline(e.target.value)}
                       className="mt-2 w-full border px-3 py-2 rounded"
                     />
-                  )} 
+                  )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium">Flight #</label>
+                  <label className="block text-sm font-medium mb-1">Flight #</label>
                   <input
                     type="text"
                     value={dropFlightNumber}
@@ -346,8 +345,9 @@ const Booking = () => {
                     className="w-full border px-3 py-2 rounded"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium">Departure Time</label>
+                  <label className="block text-sm font-medium mb-1">Departure Time</label>
                   <input
                     type="time"
                     value={dropArrivalTime}
