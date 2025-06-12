@@ -412,28 +412,54 @@ const Booking = () => {
       )}
 
       {step === 2 && (
-        <div className="space-y-6">
+        <div className="space-y-8 max-w-4xl mx-auto">
           <br />
-          <div className="grid sm:grid-cols-2 gap-4">
+          <p className="text-sm text-gray-600">
+            Please select a vehicle that suits your transportation needs. Rates are listed per hour. 
+            <br /> <br />
+            Click on a vehicle to choose it.
+          </p>
+
+          <br />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {vehicleOptions.map(vehicle => (
               <div
                 key={vehicle.id}
                 onClick={() => setSelectedVehicle(vehicle)}
-                className={`border p-4 rounded cursor-pointer hover:border-black ${selectedVehicle?.id === vehicle.id ? 'border-black shadow' : 'border-gray-300'}`}
+                className={`border p-5 rounded-lg cursor-pointer transition-all duration-200 
+                  ${selectedVehicle?.id === vehicle.id ? 'border-black shadow-lg ring-1 ring-black' : 'border-gray-300 hover:border-gray-500'}`}
               >
-                <div className="font-semibold text-lg">{vehicle.name}</div>
+                <div className="font-bold text-lg text-gray-900">{vehicle.name}</div>
                 <div className="text-sm text-gray-600 mt-1">${vehicle.rate}/hr</div>
+                {vehicle.description && (
+                  <div className="text-xs text-gray-500 mt-2">{vehicle.description}</div>
+                )}
               </div>
             ))}
           </div>
 
-          <br /> <br /> <br />
+          <br />
 
-          <div className="flex justify-between mt-6">
-            <button onClick={() => setStep(1)} className="px-6 py-2 border rounded-full text-sm hover:bg-gray-100">Back</button>
+          {selectedVehicle && (
+            <div className="text-sm text-black-600">
+              Selected: <strong>{selectedVehicle.name}</strong> at ${selectedVehicle.rate}/hr
+            </div>
+          )}
+
+          <div className="flex justify-between pt-6">
+            <button
+              onClick={() => setStep(1)}
+              className="px-6 py-2 border rounded-full text-sm hover:bg-gray-100 transition"
+            >
+              Back
+            </button>
+
             <button
               onClick={handleContinue}
-              className="px-6 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800"
+              disabled={!selectedVehicle}
+              className={`px-6 py-2 rounded-full text-sm transition 
+                ${!selectedVehicle ? 'bg-gray-300 text-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'}`}
             >
               Continue
             </button>
@@ -442,22 +468,76 @@ const Booking = () => {
       )}
 
       {step === 3 && (
-        <div className="space-y-4 max-w-xl mx-auto">
+        <div className="space-y-6 max-w-xl mx-auto text-left">
           <br />
-          <input type="text" placeholder="Your Full Name" value={name} onChange={e => setName(e.target.value)} className="w-full border px-3 py-2 rounded" />
-          <input type="email" placeholder="Your Email Address" value={email} onChange={e => setEmail(e.target.value)} className="w-full border px-3 py-2 rounded" />
-          <InputMask mask="999-999-9999" value={phone} onChange={e => setPhone(e.target.value)} maskChar={null}>
-            {(inputProps) => <input {...inputProps} type="tel" placeholder="Your Phone Number" className="w-full border px-3 py-2 rounded" />}
-          </InputMask>
+          <p className="text-sm text-gray-600">
+            Please fill in your full name, email address, and phone number so we can confirm your reservation and send you important updates.
+          </p>
 
-          <br /> <br /> <br />
+          <br />
 
-          <div className="flex justify-between mt-6">
-            <button onClick={() => setStep(2)} className="px-6 py-2 border rounded-full text-sm hover:bg-gray-100">Back</button>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="fullName">
+              Full Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              placeholder="e.g. John Doe"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              className="w-full border px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="e.g. john.doe@example.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="w-full border px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">
+              Phone Number <span className="text-red-500">*</span>
+            </label>
+            <InputMask
+              mask="999-999-9999"
+              value={phone}
+              onChange={e => setPhone(e.target.value)}
+              maskChar={null}
+            >
+              {(inputProps) => (
+                <input
+                  {...inputProps}
+                  id="phone"
+                  type="tel"
+                  placeholder="e.g. 123-456-7890"
+                  className="w-full border px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              )}
+            </InputMask>
+          </div>
+
+          <div className="flex justify-between pt-6">
+            <button
+              onClick={() => setStep(2)}
+              className="px-6 py-2 border rounded-full text-sm hover:bg-gray-100 transition"
+            >
+              Back
+            </button>
+
             <button
               onClick={handleContinue}
               disabled={loading}
-              className="px-6 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800"
+              className="px-6 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition disabled:opacity-50"
             >
               {loading ? 'Processing…' : 'Reserve with Stripe'}
             </button>
