@@ -106,7 +106,7 @@ export default function Layout({ children }) {
               </p>
               <p className="mt-1">
                 <a href="tel:+14243332293" className="hover:underline">
-                  424-333-2293
+                  323-284-8444
                 </a>
               </p>
               <p className="mt-4">Based in Los Angeles, California</p>
