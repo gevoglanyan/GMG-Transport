@@ -5,7 +5,7 @@ export default function Cancel() {
   return (
     <>
       <Head>
-        <title>Canceled | GMG Transportation</title>
+        <title>Canceled</title>
         <meta name="robots" content="noindex" />
         <meta name="description" content="Your GMG Transportation booking was canceled." />
         <link rel="icon" href="/favicon.ico" />

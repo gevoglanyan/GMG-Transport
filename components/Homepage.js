@@ -6,7 +6,7 @@ export default function Homepage() {
   return (
     <>
       <Head>
-        <title>Home | GMG Transportation Inc</title>
+        <title>Home</title>
         <meta name="description" content="Luxury black car and SUV services in Los Angeles. Book GMG Transportation for executive travel, events, and airport transfers." />
       </Head>
 

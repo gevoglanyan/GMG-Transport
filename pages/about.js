@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>About | GMG Transportation</title>
+        <title>About</title>
         <meta name="description" content="Learn about GMG Transportation's mission, values, and 15+ years of luxury transportation excellence in Los Angeles." />
       </Head>
 

@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact | GMG Transportation </title>
+        <title>Contact</title>
         <meta name="description" content="Get in touch with GMG Transportation Inc. for bookings, questions, or custom ride requests." />
       </Head>
 

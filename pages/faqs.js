@@ -5,7 +5,7 @@ export default function FaqPage() {
   return (
     <>
       <Head>
-        <title>FAQs | GMG Transportation</title>
+        <title>FAQs</title>
         <meta name="description" content="Find answers to frequently asked questions about booking, pricing, cancellations, and vehicle policies." />
       </Head>
 

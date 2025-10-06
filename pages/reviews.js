@@ -5,7 +5,7 @@ export default function ReviewsPage() {
   return (
     <>
       <Head>
-        <title>Reviews | GMG Transportation</title>
+        <title>Reviews</title>
         <meta name="description" content="Read real reviews from GMG Transportation clients. See what makes our luxury chauffeur service trusted across Southern California." />
       </Head>
 

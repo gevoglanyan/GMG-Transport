@@ -5,7 +5,7 @@ export default function Success() {
   return (
     <>
       <Head>
-        <title>Booking Confirmed | GMG Transportation</title>
+        <title>Booking Confirmed</title>
         <meta name="description" content="Your GMG Transportation booking was successfully confirmed." />
         <meta name="robots" content="noindex" />
         <link rel="icon" href="/favicon.ico" />

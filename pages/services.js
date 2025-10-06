@@ -7,7 +7,7 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Services | GMG Transportation</title>
+        <title>Services</title>
         <meta
           name="description"
           content="Explore GMG's premium transportation services including airport transfers, corporate travel, event rides, and more."
