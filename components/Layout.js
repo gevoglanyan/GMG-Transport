@@ -35,7 +35,7 @@ export default function Layout({ children }) {
         {menuOpen && (
           <div className="fixed inset-0 bg-gray-800 z-50 flex flex-col items-center justify-center space-y-6 text-lg text-white sm:hidden">
             <button
-              className="absolute top-4 left-4 text-white"
+              className="absolute top-4 right-4 text-white"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
             >
