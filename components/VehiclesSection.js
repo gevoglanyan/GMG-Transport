@@ -42,6 +42,19 @@ const vehicles = [
             6+ Hours: $125/hr`
   },
   {
+    id: "new-yukon-premium",
+    title: "GMC Yukon XL (Premium)",
+    images: ["/images/IMG_7512.jpeg", "/images/IMG_7511.jpeg", "/images/IMG_7510.jpeg", "/images/IMG_7509.jpeg", "/images/IMG_7508.jpeg", "/images/IMG_7507.jpeg", "/images/IMG_7506.jpeg"],
+    alt: "GMC Yukon Premium",
+    desc: "For those who want style with substance, the premium Yukon XL delivers. Featuring luxurious captain’s chairs, an extra-large panoramic sunroof, and refined materials throughout, it’s built for first-class experiences. Ideal for business travelers, couples, or small VIP groups.",
+    capacity: "Up to 6 passengers",
+    luggage: "5–6 large bags",
+    amenities: "Captain's Chairs, Panoramic Sunroof, Ambient Interior Lighting, USB-C Ports, HD Navigation System, Tri-Zone Climate Control",
+    rates: `Minimum of 2 Hours
+            2–5 Hours: $150/hr
+            6+ Hours: $125/hr`
+  },
+  {
     id: "yukon-standard",
     title: "GMC Yukon XL",
     images: ["/images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],

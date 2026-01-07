@@ -7,6 +7,7 @@ const MapPreview = dynamic(() => import('./MapPreview'), { ssr: false });
 
 const vehicleOptions = [
   { id: 'escalade', name: 'Cadillac Escalade ESV', rate: 150 },
+  { id: 'new-premium-yukon', name: 'GMC Yukon XL (Premium)', rate: 150 },
   { id: 'premium-yukon', name: 'GMC Yukon XL (Premium)', rate: 150 },
   { id: 'suburban', name: 'Chevrolet Suburban', rate: 125 },
   { id: 'standard-yukon', name: 'GMC Yukon XL (Standard)', rate: 125 }
