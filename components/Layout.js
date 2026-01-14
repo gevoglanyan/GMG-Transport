@@ -78,7 +78,7 @@ export default function Layout({ children }) {
                   rel="noopener noreferrer"
                   className="text-white-600 hover:underline"
                 >
-                  Harutyun Gevoglanyan
+                  Harry Gevoglanyan
                 </a>
               </p>
 
