@@ -11,7 +11,7 @@ export default function FleetPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-b from-white to-[var(--color-bg)]">
         <VehiclesSection />
       </div>
     </>

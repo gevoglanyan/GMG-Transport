@@ -115,15 +115,35 @@ const MapPreview = ({ pickupAddress, dropoffAddress, stops = [] }) => {
   }, [directionsResult]);
 
   if (!isLoaded) {
-    return <p className="text-sm text-gray-600">Loading map…</p>;
+    return (
+      <div className="flex items-center justify-center h-full w-full">
+        <div className="text-center">
+          <svg className="animate-spin h-8 w-8 text-[var(--color-accent)] mx-auto mb-2" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <p className="text-sm text-[var(--color-text-muted)]">Loading map…</p>
+        </div>
+      </div>
+    );
   }
 
   if (!pickupCoords && !dropoffCoords) {
     return (
-      <div className="flex items-center justify-center h-full w-full">
-        <p className="text-sm text-gray-600 text-center">
-          Enter pickup and dropoff to preview the route.
-        </p>
+      <div className="flex items-center justify-center h-full w-full bg-[var(--color-bg)] rounded-lg">
+        <div className="text-center p-8">
+          <div className="w-16 h-16 bg-[var(--color-accent)] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <p className="text-sm text-[var(--color-text-secondary)] font-medium">
+            Enter pickup and dropoff locations
+          </p>
+          <p className="text-xs text-[var(--color-text-muted)] mt-1">
+            Your route will preview here
+          </p>
+        </div>
       </div>
     );
   }
@@ -137,7 +157,7 @@ const MapPreview = ({ pickupAddress, dropoffAddress, stops = [] }) => {
       : pickupCoords || dropoffCoords;
 
   return (
-    <div className="w-full h-full rounded overflow-hidden">
+    <div className="w-full h-full rounded-xl overflow-hidden border-2 border-[var(--color-border)] shadow-md">
       <GoogleMap
         mapContainerStyle={{ height: '100%', width: '100%' }}
         center={center}
@@ -149,22 +169,82 @@ const MapPreview = ({ pickupAddress, dropoffAddress, stops = [] }) => {
           mapTypeControlOptions: {
             mapTypeIds: ['roadmap', 'satellite', 'hybrid'],
           },
+          styles: [
+            {
+              featureType: 'poi',
+              elementType: 'labels',
+              stylers: [{ visibility: 'off' }]
+            }
+          ]
         }}
         onLoad={(map) => (mapRef.current = map)}
       >
-        {pickupCoords && <Marker position={pickupCoords} label="P" />}
+        {pickupCoords && (
+          <Marker 
+            position={pickupCoords} 
+            label={{
+              text: "P",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "14px"
+            }}
+            icon={{
+              path: window.google.maps.SymbolPath.CIRCLE,
+              fillColor: '#0A0E27',
+              fillOpacity: 1,
+              strokeColor: '#D4AF37', 
+              strokeWeight: 3,
+              scale: 12,
+            }}
+          />
+        )}
         {waypointCoords.map((coord, idx) => (
-          <Marker key={`stop-${idx}`} position={coord} label={`${idx + 1}`} />
+          <Marker 
+            key={`stop-${idx}`} 
+            position={coord} 
+            label={{
+              text: `${idx + 1}`,
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "12px"
+            }}
+            icon={{
+              path: window.google.maps.SymbolPath.CIRCLE,
+              fillColor: '#475569', 
+              fillOpacity: 1,
+              strokeColor: '#D4AF37', 
+              strokeWeight: 2,
+              scale: 10,
+            }}
+          />
         ))}
-        {dropoffCoords && <Marker position={dropoffCoords} label="D" />}
+        {dropoffCoords && (
+          <Marker 
+            position={dropoffCoords} 
+            label={{
+              text: "D",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "14px"
+            }}
+            icon={{
+              path: window.google.maps.SymbolPath.CIRCLE,
+              fillColor: '#DC2626',
+              fillOpacity: 1,
+              strokeColor: '#D4AF37', 
+              strokeWeight: 3,
+              scale: 12,
+            }}
+          />
+        )}
         {directionsResult && (
           <DirectionsRenderer
             directions={directionsResult}
             options={{
               suppressMarkers: true,
               polylineOptions: {
-                strokeColor: 'blue',
-                strokeOpacity: 0.8,
+                strokeColor: '#D4AF37', 
+                strokeOpacity: 0.9,
                 strokeWeight: 5,
               },
             }}

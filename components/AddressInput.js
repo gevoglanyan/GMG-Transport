@@ -31,7 +31,7 @@ export default function AddressInput({ value, onChange, placeholder }) {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)} 
         placeholder={placeholder}
-        className="border px-3 py-2 rounded w-full"
+        className="w-full border border-[var(--color-border)] rounded-[var(--radius-md)] px-4 py-2.5 text-[var(--color-text-primary)] bg-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent placeholder:text-[var(--color-text-muted)]"
       />
     </Autocomplete>
   ) : (
@@ -40,7 +40,7 @@ export default function AddressInput({ value, onChange, placeholder }) {
       value={inputValue}
       onChange={(e) => setInputValue(e.target.value)}
       placeholder={placeholder}
-      className="border px-3 py-2 rounded w-full"
+      className="w-full border border-[var(--color-border)] rounded-[var(--radius-md)] px-4 py-2.5 text-[var(--color-text-primary)] bg-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent placeholder:text-[var(--color-text-muted)]"
     />
   );
 }
