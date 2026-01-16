@@ -17,7 +17,7 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col min-h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)]">
-      <header className="bg-[var(--color-primary)] shadow-lg w-full px-6 sm:px-4 py-5 sm:py-4 sticky top-0 z-40">
+      <header className="bg-[var(--color-primary)] shadow-lg w-full px-4 py-5 sm:py-4 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between sm:justify-center">
           <button
             className="sm:hidden text-gray-300 hover:text-white focus:outline-none transition-colors"
@@ -89,6 +89,7 @@ export default function Layout({ children }) {
               <p className="text-gray-400 text-sm mt-6">
                 Have questions? Reach out anytime!
               </p>
+              <br />
               <p className="text-gray-400 text-sm mt-4">
                 Created by{" "}
                 <a
@@ -112,6 +113,8 @@ export default function Layout({ children }) {
                 <li><a href="/reviews" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Reviews</a></li>
                 <li><a href="/about" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">About Us</a></li>
                 <li><a href="/contact" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Contact Us</a></li>
+                <li><a href="/terms" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors text-sm">Terms of Service</a></li>
+                <li><a href="/privacy" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors text-sm">Privacy Policy</a></li>
               </ul>
             </div>
         
@@ -124,7 +127,7 @@ export default function Layout({ children }) {
               </p>
               <p className="text-gray-300 mb-4">
                 <a href="tel:+14243332293" className="hover:text-[var(--color-accent)] transition-colors font-semibold text-lg">
-                  323-284-8444
+                  (323) 284-8444
                 </a>
               </p>
               <p className="text-gray-300 mb-4">
@@ -140,6 +143,7 @@ export default function Layout({ children }) {
                   @gmgtransportation
                 </a>
               </p>
+              <br />
               <p className="text-gray-400 text-sm mt-6">Based in Los Angeles, California</p>
             </div>
           </div>

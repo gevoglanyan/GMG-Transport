@@ -58,9 +58,11 @@ export default function Homepage() {
                 href="tel:+14243332293"
                 className="text-4xl font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors duration-200 font-['Playfair_Display']"
               >
-                323-284-8444
+                (323) 284-8444
               </a>
             </div>
+
+            <br />
             
             <div>
               <p className="text-sm text-[var(--color-text-muted)] mb-1 uppercase tracking-wider font-medium">

@@ -22,7 +22,7 @@ export default function ServicesPage() {
             <p className="text-body-lg max-w-3xl mx-auto">
               At GMG Transportation Inc., we specialize in providing a seamless, first-class experience for every ride.
               Whether you're catching a flight, closing a business deal, or celebrating a once-in-a-lifetime event, we tailor
-              our services to meet your exact needs—offering comfort, safety, and punctuality in every journey.
+              our services to meet your exact needs — offering comfort, safety, and punctuality in every journey.
             </p>
           </div>
 

@@ -41,8 +41,8 @@ const vehicles = [
             6+ Hours: $125/hr`
   },
   {
-    id: "new-yukon-premium",
-    title: "GMC Yukon XL (Premium)",
+    id: "yukon-evolution",
+    title: "GMC Yukon XL (Evolution)",
     images: ["/images/IMG_7512.jpeg", "/images/IMG_7511.jpeg", "/images/IMG_7510.jpeg", "/images/IMG_7509.jpeg", "/images/IMG_7508.jpeg", "/images/IMG_7507.jpeg", "/images/IMG_7506.jpeg"],
     alt: "GMC Yukon Premium",
     desc: "For those who want style with substance, the premium Yukon XL delivers. Featuring luxurious captain's chairs, an extra-large panoramic sunroof, and refined materials throughout, it's built for first-class experiences. Ideal for business travelers, couples, or small VIP groups.",

@@ -32,7 +32,7 @@ export default function ContactPage() {
                 href="tel:+14243332293" 
                 className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold text-lg transition-colors"
               >
-                323-284-8444
+                (323) 284-8444
               </a>
             </div>
 
@@ -44,8 +44,8 @@ export default function ContactPage() {
               </div>
               <h4 className="font-semibold text-[var(--color-primary)] mb-2">Email Us</h4>
               <a 
-                href="mailto:gmgtransinc@gmail.com" 
-                className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold transition-colors break-all"
+                href="mailto:gmgtransinc@gmail.com"
+                className="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold transition-colors whitespace-nowrap"
               >
                 gmgtransinc@gmail.com
               </a>
@@ -86,11 +86,8 @@ export default function ContactPage() {
 
           <div className="card bg-[var(--color-bg)] text-center mt-12">
             <h4 className="font-semibold text-[var(--color-primary)] mb-4">Business Hours</h4>
-            <p className="text-body mb-2">
-              Available 24/7 for bookings and urgent requests
-            </p>
             <p className="text-sm text-[var(--color-text-muted)]">
-              Office hours: Monday - Friday, 9:00 AM - 6:00 PM PST
+              Monday - Friday, 9:00 AM - 6:00 PM PST
             </p>
           </div>
         </div>
