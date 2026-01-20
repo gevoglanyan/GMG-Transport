@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const vehicleGroups = [
   {
-    brand: "Cadillac",
+    brand: "Cadillac Escalade",
     vehicles: [
       {
         id: "escalade",
@@ -32,7 +32,7 @@ const vehicleGroups = [
     ]
   },
   {
-    brand: "Chevrolet",
+    brand: "Chevrolet Suburban",
     vehicles: [
       {
         id: "suburban",
@@ -62,7 +62,7 @@ const vehicleGroups = [
     ]
   },
   {
-    brand: "GMC",
+    brand: "GMC Yukon",
     vehicles: [
       {
         id: "yukon-premium",
