@@ -113,8 +113,8 @@ export default function Layout({ children }) {
                 <li><a href="/reviews" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Reviews</a></li>
                 <li><a href="/about" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">About Us</a></li>
                 <li><a href="/contact" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Contact Us</a></li>
-                <li><a href="/terms" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors text-sm">Terms of Service</a></li>
-                <li><a href="/privacy" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors text-sm">Privacy Policy</a></li>
+                <li><a href="/terms" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Terms of Service</a></li>
+                <li><a href="/privacy" className="text-gray-300 hover:text-[var(--color-accent)] transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
         
