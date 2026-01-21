@@ -72,7 +72,7 @@ const vehicleGroups = [
         alt: "GMC Yukon XL Premium",
         desc: "Experience elevated luxury in the Premium Yukon XL. Plush captain's chairs cradle passengers in comfort while the expansive panoramic sunroof floods the cabin with natural light. Every surface reflects meticulous attention to detail—from ambient lighting that sets the perfect mood to advanced climate control that keeps everyone comfortable. Ideal for executive travel and intimate VIP groups.",
         capacity: "6 Passengers",
-        luggage: "5–6 Large Suitcases",
+        luggage: "5 – 6 Large Suitcases",
         features: [
           "Captain's Seating",
           "Panoramic Sunroof",
