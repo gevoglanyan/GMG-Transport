@@ -11,8 +11,8 @@ const vehicleGroups = [
         images: ["/images/IMG_4003.png", "/images/IMG_4004.png", "/images/IMG_4005.png", "/images/IMG_4006.png", "/images/IMG_4008.png", "/images/IMG_4009.png"],
         alt: "Cadillac Escalade ESV",
         desc: "Command attention with the legendary Escalade ESV. This isn't just transportation—it's a statement. Extended wheelbase provides first-class legroom, while hand-stitched leather, whisper-quiet cabin acoustics, and cutting-edge technology create an atmosphere of absolute refinement. Perfect for weddings, red carpet arrivals, and C-suite executive travel.",
-        capacity: "6 passengers",
-        luggage: "5–6 large suitcases",
+        capacity: "6 Passengers",
+        luggage: "5 – 6 Large Suitcases",
         features: [
           "Hand-Stitched Premium Leather",
           "Individual Climate Zones",
@@ -22,10 +22,10 @@ const vehicleGroups = [
           "Studio-Quality Sound System"
         ],
         rates: {
-          minimum: "2 hours",
+          minimum: "2 Hours",
           tiers: [
-            { duration: "2–5 hours", rate: "$150/hour" },
-            { duration: "6+ hours", rate: "$125/hour" }
+            { duration: "2 – 5 Hours", rate: "$150/Hour" },
+            { duration: "6+ Hours", rate: "$125/Hour" }
           ]
         }
       }
@@ -41,8 +41,8 @@ const vehicleGroups = [
         images: ["/images/IMG_2386.png"],
         alt: "Chevrolet Suburban",
         desc: "The trusted choice for families and corporate teams. With three rows of spacious seating and a cavernous cargo area, the Suburban effortlessly handles group travel without compromising on comfort. Whether you're heading to the airport with luggage or organizing team transportation, this American classic delivers reliability wrapped in refined comfort.",
-        capacity: "7 passengers",
-        luggage: "5–6 large suitcases",
+        capacity: "7 Passengers",
+        luggage: "5 – 6 Large Suitcases",
         features: [
           "Factory Privacy Tinting",
           "Rear Climate Control",
@@ -52,10 +52,10 @@ const vehicleGroups = [
           "Expansive Cargo Space"
         ],
         rates: {
-          minimum: "2 hours",
+          minimum: "2 Hours",
           tiers: [
-            { duration: "2–5 hours", rate: "$125/hour" },
-            { duration: "6+ hours", rate: "$100/hour" }
+            { duration: "2 – 5 Hours", rate: "$125/Hour" },
+            { duration: "6+ Hours", rate: "$100/Hour" }
           ]
         }
       }
@@ -71,8 +71,8 @@ const vehicleGroups = [
         images: ["/images/IMG_3984.png", "/images/IMG_3985.png", "/images/IMG_3986.png", "/images/IMG_3987.png", "/images/IMG_3988.png", "/images/IMG_3989.png", "/images/IMG_3990.png"],
         alt: "GMC Yukon XL Premium",
         desc: "Experience elevated luxury in the Premium Yukon XL. Plush captain's chairs cradle passengers in comfort while the expansive panoramic sunroof floods the cabin with natural light. Every surface reflects meticulous attention to detail—from ambient lighting that sets the perfect mood to advanced climate control that keeps everyone comfortable. Ideal for executive travel and intimate VIP groups.",
-        capacity: "6 passengers",
-        luggage: "5–6 large suitcases",
+        capacity: "6 Passengers",
+        luggage: "5–6 Large Suitcases",
         features: [
           "Captain's Seating",
           "Panoramic Sunroof",
@@ -82,10 +82,10 @@ const vehicleGroups = [
           "Tri-Zone Climate"
         ],
         rates: {
-          minimum: "2 hours",
+          minimum: "2 Hours",
           tiers: [
-            { duration: "2–5 hours", rate: "$150/hour" },
-            { duration: "6+ hours", rate: "$125/hour" }
+            { duration: "2 – 5 Hours", rate: "$150/Hour" },
+            { duration: "6+ Hours", rate: "$125/Hour" }
           ]
         }
       },
@@ -96,8 +96,8 @@ const vehicleGroups = [
         images: ["/images/IMG_7512.jpeg", "/images/IMG_7511.jpeg", "/images/IMG_7510.jpeg", "/images/IMG_7509.jpeg", "/images/IMG_7508.jpeg", "/images/IMG_7507.jpeg", "/images/IMG_7506.jpeg"],
         alt: "GMC Yukon XL Evolution",
         desc: "The Evolution Series represents the pinnacle of modern SUV design. This meticulously appointed Yukon XL combines bold styling with premium comfort features. Sink into luxurious captain's chairs, enjoy the open-air feel of the panoramic sunroof, and stay connected with the latest technology. Perfect for discerning travelers who demand both style and substance.",
-        capacity: "6 passengers",
-        luggage: "5–6 large suitcases",
+        capacity: "6 Passengers",
+        luggage: "5 – 6 Large Suitcases",
         features: [
           "Premium Captain's Chairs",
           "Panoramic Glass Roof",
@@ -107,10 +107,10 @@ const vehicleGroups = [
           "Multi-Zone Climate"
         ],
         rates: {
-          minimum: "2 hours",
+          minimum: "2 Hours",
           tiers: [
-            { duration: "2–5 hours", rate: "$150/hour" },
-            { duration: "6+ hours", rate: "$125/hour" }
+            { duration: "2 – 5 Hours", rate: "$150/Hour" },
+            { duration: "6+ Hours", rate: "$125/Hour" }
           ]
         }
       },
@@ -121,8 +121,8 @@ const vehicleGroups = [
         images: ["/images/IMG_5604.jpg", "/images/IMG_5605.jpg", "/images/IMG_5606.jpg", "/images/IMG_5607.jpg", "/images/IMG_5608.jpg", "/images/IMG_5609.jpg", "/images/IMG_5610.jpg"],
         alt: "GMC Yukon XL",
         desc: "The quintessential full-size SUV that does it all. With three rows of genuine comfort and commanding road presence, this Yukon XL is built for the journey. Whether you're shuttling a business team across town or embarking on a long-distance adventure, you'll appreciate the thoughtful layout, smooth ride quality, and versatile seating that adapts to your needs.",
-        capacity: "7 passengers",
-        luggage: "5–6 large suitcases",
+        capacity: "7 Passengers",
+        luggage: "5 – 6 Large Suitcases",
         features: [
           "Privacy Glass",
           "USB Charging Ports",
@@ -132,10 +132,10 @@ const vehicleGroups = [
           "Premium Sound"
         ],
         rates: {
-          minimum: "2 hours",
+          minimum: "2 Hours",
           tiers: [
-            { duration: "2–5 hours", rate: "$125/hour" },
-            { duration: "6+ hours", rate: "$100/hour" }
+            { duration: "2–5 Hours", rate: "$125/Hour" },
+            { duration: "6+ Hours", rate: "$100/Hour" }
           ]
         }
       }
@@ -170,7 +170,6 @@ function VehiclesSection() {
 
         {vehicleGroups.map((group, groupIndex) => (
           <div key={groupIndex} className="mb-20">
-            {/* Brand Header */}
             <div className="mb-8">
               <h4 className="text-4xl font-bold text-[var(--color-primary)] mb-2 font-['Playfair_Display']">
                 {group.brand}
@@ -178,7 +177,6 @@ function VehiclesSection() {
               <div className="h-0.5 w-16 bg-[var(--color-accent)] mx-auto rounded-full"></div>
             </div>
 
-            {/* Vehicle Cards */}
             <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
               {group.vehicles.map((v, vehicleIndex) => (
                 <div 
@@ -262,7 +260,7 @@ function VehiclesSection() {
                         </svg>
                         <p className="text-xs font-bold uppercase tracking-wider">Hourly Rates</p>
                       </div>
-                      <p className="text-xs opacity-90 mb-2">Minimum booking: {v.rates.minimum}</p>
+                      <p className="text-xs opacity-90 mb-2">Minimum Booking: {v.rates.minimum}</p>
                       <div className="space-y-1">
                         {v.rates.tiers.map((tier, idx) => (
                           <div key={idx} className="flex justify-between items-center text-sm">
