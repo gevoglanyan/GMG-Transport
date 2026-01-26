@@ -87,7 +87,7 @@ export default function ContactPage() {
           <div className="card bg-[var(--color-bg)] text-center mt-12">
             <h4 className="font-semibold text-[var(--color-primary)] mb-4">Business Hours</h4>
             <p className="text-sm text-[var(--color-text-muted)]">
-              Monday - Friday, 9:00 AM - 6:00 PM PST
+              Monday - Sunday, 24/7 Service Available
             </p>
           </div>
         </div>

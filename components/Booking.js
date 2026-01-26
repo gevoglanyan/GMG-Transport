@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import InputMask from 'react-input-mask';
 import AddressInput from './AddressInput';
 import dynamic from 'next/dynamic';
@@ -39,6 +39,40 @@ const Booking = () => {
   const [hours, setHours] = useState(2);
   const [airline, setAirline] = useState('');
   const [customAirline, setCustomAirline] = useState(''); 
+
+  const bookingFormRef = useRef(null);
+
+  const scrollToCenter = () => {
+    setTimeout(() => {
+      if (bookingFormRef.current) {
+        const formTop = bookingFormRef.current.offsetTop;
+        const formHeight = bookingFormRef.current.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        const isMobile = window.innerWidth < 768;
+        
+        let scrollPosition;
+        if (isMobile) {
+          scrollPosition = formTop - 80;
+        } else {
+          scrollPosition = formTop - (windowHeight / 2) + (formHeight / 2);
+        }
+        
+        if ('scrollBehavior' in document.documentElement.style) {
+          window.scrollTo({
+            top: Math.max(0, scrollPosition),
+            behavior: 'smooth'
+          });
+        } else {
+          window.scrollTo(0, Math.max(0, scrollPosition));
+        }
+      }
+    }, 100);
+  };
+
+  useEffect(() => {
+    scrollToCenter();
+  }, [step]);
 
   const addStop = () => setStops([...stops, '']);
   const updateStop = (index, value) => {
@@ -106,7 +140,7 @@ const Booking = () => {
   };
 
   return (
-    <div className="card mt-10 max-w-[1400px] mx-auto animate-fade-in">
+    <div ref={bookingFormRef} className="card mt-10 max-w-[1400px] mx-auto animate-fade-in">
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs sm:text-sm font-medium border-b border-[var(--color-border)] pb-4">
           <div className={`flex items-center ${step === 1 ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"}`}>
@@ -440,7 +474,10 @@ const Booking = () => {
             {vehicleOptions.map(vehicle => (
               <div
                 key={vehicle.id}
-                onClick={() => setSelectedVehicle(vehicle)}
+                onClick={() => {
+                  setSelectedVehicle(vehicle);
+                  scrollToCenter();
+                }}
                 className={`card cursor-pointer transition-all duration-300 hover:scale-[1.02] ${
                   selectedVehicle?.id === vehicle.id 
                     ? 'border-2 border-[var(--color-accent)] shadow-xl ring-2 ring-[var(--color-accent)] ring-opacity-20' 
