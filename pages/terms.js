@@ -1,293 +1,181 @@
 import React from 'react';
 import Head from 'next/head';
 
+const sections = [
+  {
+    title: "1. Acceptance of Terms",
+    content: <p className="text-body">By accessing and using the services provided by GMG Transportation Inc. ("GMG," "we," "us," or "our"), you accept and agree to be bound by these Terms of Service. These terms apply to all users of our transportation services, including passengers, bookers, and website visitors.</p>,
+  },
+  {
+    title: "2. Service Description",
+    content: (
+      <>
+        <p className="text-body mb-3">GMG Transportation provides luxury ground transportation services in Southern California, including:</p>
+        <ul className="space-y-1.5 text-body">
+          {["Airport transfers (pickup and dropoff)", "Corporate and executive travel", "Special event transportation", "Hourly chauffeur services", "Long-distance intercity travel"].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="var(--color-accent)" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "3. Booking and Reservations",
+    content: (
+      <>
+        <p className="text-body mb-3">Reservations can be made through our website, by phone at <a href="tel:+13232848444" className="font-semibold" style={{ color: 'var(--color-accent)' }}>323-284-8444</a>, or via email. All bookings require a minimum of 2 hours. We recommend booking 24-48 hours in advance.</p>
+        <p className="text-body">All bookings receive a confirmation via email or phone. Please verify all details are correct — it is your responsibility to notify us of any errors.</p>
+      </>
+    ),
+  },
+  {
+    title: "4. Payment Terms",
+    content: (
+      <>
+        <p className="text-body mb-3">We accept Visa, Mastercard, American Express, and debit cards. Payment is required at time of booking through our secure Stripe system. Corporate accounts with approved invoicing have 30-day payment terms.</p>
+        <p className="text-body">Gratuity is not included and is at the customer's discretion. Standard gratuity is 15–20%.</p>
+      </>
+    ),
+  },
+  {
+    title: "5. Cancellation and Refund Policy",
+    content: (
+      <div className="space-y-3">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+        >
+          {[
+            { timeframe: "24+ hours notice", policy: "Full refund minus processing fees", color: 'var(--color-success)' },
+            { timeframe: "12–24 hours notice", policy: "50% refund", color: '#d97706' },
+            { timeframe: "Less than 12 hours", policy: "No refund", color: 'var(--color-error)' },
+            { timeframe: "No-show", policy: "100% charge", color: 'var(--color-error)' },
+          ].map((row) => (
+            <div
+              key={row.timeframe}
+              className="flex items-center justify-between gap-3 p-3 rounded-[var(--radius-md)]"
+              style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)' }}
+            >
+              <span className="text-sm font-medium text-[var(--color-text-primary)]">{row.timeframe}</span>
+              <span className="text-sm font-semibold" style={{ color: row.color }}>{row.policy}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-body text-sm">For airport pickups, we monitor flights in real-time. No charge for delays due to flight changes.</p>
+      </div>
+    ),
+  },
+  {
+    title: "6. Customer Responsibilities",
+    content: (
+      <>
+        <p className="text-body mb-3">Please provide accurate pickup/dropoff locations, contact information, and number of passengers. Be ready at your pickup location at the scheduled time — a 15-minute grace period is provided, after which wait time charges of $25/15 min may apply.</p>
+        <p className="text-body">Passengers must not smoke in the vehicle, treat the driver and vehicle with respect, comply with applicable laws, and ensure children are properly secured. Customers are responsible for any vehicle damage caused by passengers.</p>
+      </>
+    ),
+  },
+  {
+    title: "7. Liability and Insurance",
+    content: (
+      <>
+        <p className="text-body mb-3">All GMG vehicles are fully insured for commercial passenger transportation as required by California law. Insurance certificates are available upon request.</p>
+        <p className="text-body">GMG's liability is limited to direct damages only. We are not liable for missed flights or events due to traffic, lost personal belongings, or indirect/consequential damages.</p>
+      </>
+    ),
+  },
+  {
+    title: "8. Service Modifications",
+    content: <p className="text-body">Route changes or additional stops requested during service may result in additional charges. Hourly booking extensions are subject to availability and billed at the hourly rate.</p>,
+  },
+  {
+    title: "9. Force Majeure",
+    content: <p className="text-body">GMG Transportation is not liable for failure to perform services due to natural disasters, severe weather, civil unrest, government restrictions, or vehicle mechanical failures beyond our control.</p>,
+  },
+  {
+    title: "10. Dispute Resolution",
+    content: <p className="text-body">Complaints should be directed to us within 48 hours of service completion at <a href="mailto:gmgtransinc@gmail.com" className="font-semibold hover:underline" style={{ color: 'var(--color-accent)' }}>gmgtransinc@gmail.com</a> or 323-284-8444. These Terms are governed by California law; disputes shall be resolved in Los Angeles County courts.</p>,
+  },
+  {
+    title: "11. Changes to Terms",
+    content: <p className="text-body">GMG Transportation reserves the right to modify these Terms at any time. Changes are effective immediately upon posting. Continued use of our services constitutes acceptance of modified terms.</p>,
+  },
+  {
+    title: "12. Contact Information",
+    content: (
+      <div
+        className="rounded-[var(--radius-lg)] p-5"
+        style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)' }}
+      >
+        <p className="text-body mb-1"><strong>GMG Transportation Inc.</strong></p>
+        <p className="text-body mb-1">Email: <a href="mailto:gmgtransinc@gmail.com" className="hover:underline" style={{ color: 'var(--color-accent)' }}>gmgtransinc@gmail.com</a></p>
+        <p className="text-body mb-1">Phone: <a href="tel:+13232848444" className="hover:underline" style={{ color: 'var(--color-accent)' }}>323-284-8444</a></p>
+        <p className="text-body">Location: Los Angeles, California</p>
+      </div>
+    ),
+  },
+];
+
 export default function TermsOfService() {
   return (
     <>
       <Head>
-        <title>Terms of Service - GMG Transportation</title>
+        <title>Terms of Service</title>
         <meta name="description" content="Terms of service, booking policies, and user agreements for GMG Transportation Inc." />
       </Head>
 
       <section className="bg-gradient-to-b from-white to-[var(--color-bg)] section-padding">
         <div className="container-narrow animate-fade-in">
-          <div className="text-center mb-12">
+
+          <div className="text-center mb-10 sm:mb-14">
+            <span className="section-label mb-3 inline-flex">Legal</span>
             <h1 className="heading-lg mb-4">Terms of Service</h1>
-            <div className="h-1 w-24 bg-[var(--color-accent)] mx-auto rounded-full mb-6"></div>
-            <p className="text-body-lg">
-              Last Updated: January 2025
+            <div className="gold-divider mx-auto mb-4" />
+            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Last Updated: January 2025</p>
+          </div>
+
+          <div className="card mb-6">
+            <p className="text-body">
+              By accessing and using GMG Transportation Inc. services, you accept and agree to be bound by these Terms of Service.
+              Please read them carefully before using our services.
             </p>
           </div>
 
-          <div className="card space-y-8 text-left">
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                1. Acceptance of Terms
-              </h2>
-              <p className="text-body mb-4">
-                By accessing and using the services provided by GMG Transportation Inc. ("GMG," "we," "us," or "our"), 
-                you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, 
-                please do not use our services.
-              </p>
-              <p className="text-body">
-                These terms apply to all users of our transportation services, including passengers, bookers, 
-                and visitors to our website.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                2. Service Description
-              </h2>
-              <p className="text-body mb-4">
-                GMG Transportation provides luxury ground transportation services in Southern California, including:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-body ml-4">
-                <li>Airport transfers (pickup and dropoff)</li>
-                <li>Corporate and executive travel</li>
-                <li>Special event transportation</li>
-                <li>Hourly chauffeur services</li>
-                <li>Long-distance intercity travel</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                3. Booking and Reservations
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">3.1 Booking Process</h3>
-              <p className="text-body mb-4">
-                Reservations can be made through our website, by phone at 323-284-8444, or via email at 
-                gmgtransinc@gmail.com. All bookings are subject to vehicle and driver availability.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">3.2 Minimum Booking</h3>
-              <p className="text-body mb-4">
-                All services require a minimum booking of 2 hours. Bookings under 2 hours will be charged 
-                at the 2-hour minimum rate.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">3.3 Advance Notice</h3>
-              <p className="text-body mb-4">
-                We recommend booking at least 24-48 hours in advance to ensure availability. 
-                While we accommodate last-minute bookings when possible, availability is not guaranteed.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">3.4 Confirmation</h3>
-              <p className="text-body">
-                All bookings will receive a confirmation via email or phone. Please verify all details 
-                are correct in your confirmation. It is your responsibility to notify us of any errors 
-                or changes needed.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                4. Payment Terms
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">4.1 Payment Methods</h3>
-              <p className="text-body mb-4">
-                We accept payment via credit card (Visa, Mastercard, American Express), debit card, 
-                and for approved corporate accounts, invoicing.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">4.2 Payment Timing</h3>
-              <p className="text-body mb-4">
-                Payment is required at the time of booking through our secure Stripe payment system. 
-                For corporate accounts with invoicing, payment is due within 30 days of invoice date.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">4.3 Pricing</h3>
-              <p className="text-body mb-4">
-                All rates are quoted in U.S. dollars and are subject to change. Rates are calculated based on:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-body ml-4 mb-4">
-                <li>Hourly rate for the selected vehicle</li>
-                <li>Number of hours (minimum 2 hours)</li>
-                <li>Additional stops or route changes</li>
-                <li>Wait time beyond agreed grace period</li>
-              </ul>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">4.4 Gratuity</h3>
-              <p className="text-body">
-                Gratuity is not included in the quoted rate and is at the customer's discretion. 
-                Standard gratuity for exceptional service is 15-20% of the total fare.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                5. Cancellation and Refund Policy
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">5.1 Customer Cancellations</h3>
-              <ul className="list-disc list-inside space-y-2 text-body ml-4 mb-4">
-                <li><strong>24+ hours notice:</strong> Full refund minus processing fees</li>
-                <li><strong>12-24 hours notice:</strong> 50% refund</li>
-                <li><strong>Less than 12 hours:</strong> No refund</li>
-                <li><strong>No-show:</strong> 100% charge</li>
-              </ul>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">5.2 GMG Cancellations</h3>
-              <p className="text-body mb-4">
-                In the unlikely event that GMG must cancel your reservation, you will receive a full refund. 
-                We will make every effort to provide alternative transportation options.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">5.3 Flight Delays</h3>
-              <p className="text-body">
-                For airport pickups, we monitor flight arrivals in real-time. There is no charge for 
-                delays due to flight arrival changes. However, if you fail to notify us of changes to 
-                your flight information and miss your scheduled pickup, standard cancellation fees apply.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                6. Customer Responsibilities
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">6.1 Accurate Information</h3>
-              <p className="text-body mb-4">
-                You must provide accurate pickup/dropoff locations, contact information, flight details 
-                (if applicable), and number of passengers. Inaccurate information may result in delays 
-                or additional charges.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">6.2 Punctuality</h3>
-              <p className="text-body mb-4">
-                Please be ready at your pickup location at the scheduled time. A grace period of 15 minutes 
-                is provided. After 15 minutes, wait time charges of $25 per 15 minutes may apply.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">6.3 Passenger Conduct</h3>
-              <p className="text-body mb-4">
-                Passengers must:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-body ml-4 mb-4">
-                <li>Treat the driver and vehicle with respect</li>
-                <li>Not smoke in the vehicle</li>
-                <li>Not consume alcohol unless approved in advance</li>
-                <li>Comply with all applicable laws</li>
-                <li>Ensure children are properly secured in car seats (provided upon request)</li>
-              </ul>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">6.4 Property Damage</h3>
-              <p className="text-body">
-                Customers are responsible for any damage to the vehicle caused by passengers, including 
-                but not limited to stains, tears, burns, or mechanical damage. Cleaning fees starting 
-                at $150 may apply for excessive mess or damage.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                7. Liability and Insurance
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">7.1 Insurance Coverage</h3>
-              <p className="text-body mb-4">
-                All GMG vehicles are fully insured for commercial passenger transportation as required 
-                by California law. Insurance certificates available upon request.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">7.2 Limitation of Liability</h3>
-              <p className="text-body mb-4">
-                GMG Transportation's liability is limited to direct damages only. We are not liable for:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-body ml-4 mb-4">
-                <li>Missed flights, meetings, or events due to traffic or unforeseen circumstances</li>
-                <li>Lost, stolen, or damaged personal belongings left in the vehicle</li>
-                <li>Indirect, incidental, or consequential damages</li>
-              </ul>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">7.3 Lost Items</h3>
-              <p className="text-body">
-                While we make every effort to return lost items, GMG is not responsible for personal 
-                belongings left in vehicles. Please check for all belongings before exiting the vehicle.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                8. Service Modifications
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">8.1 Route Changes</h3>
-              <p className="text-body mb-4">
-                Route changes or additional stops requested during service may result in additional charges 
-                based on time and distance.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">8.2 Time Extensions</h3>
-              <p className="text-body">
-                For hourly bookings, extensions beyond the reserved time are subject to availability and 
-                will be charged at the hourly rate for the vehicle.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                9. Force Majeure
-              </h2>
-              <p className="text-body">
-                GMG Transportation is not liable for failure to perform services due to circumstances 
-                beyond our control, including but not limited to: natural disasters, severe weather, 
-                acts of God, civil unrest, government restrictions, or vehicle mechanical failures.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                10. Dispute Resolution
-              </h2>
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">10.1 Complaints</h3>
-              <p className="text-body mb-4">
-                Any complaints or concerns should be directed to us within 48 hours of service completion 
-                by contacting us at gmgtransinc@gmail.com or 323-284-8444.
-              </p>
-
-              <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2 mt-4">10.2 Governing Law</h3>
-              <p className="text-body">
-                These Terms of Service are governed by the laws of the State of California. Any disputes 
-                shall be resolved in the courts of Los Angeles County, California.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                11. Changes to Terms
-              </h2>
-              <p className="text-body">
-                GMG Transportation reserves the right to modify these Terms of Service at any time. 
-                Changes will be effective immediately upon posting to our website. Continued use of 
-                our services constitutes acceptance of modified terms.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-['Playfair_Display']">
-                12. Contact Information
-              </h2>
-              <p className="text-body mb-4">
-                For questions about these Terms of Service, please contact:
-              </p>
-              <div className="bg-[var(--color-bg)] p-6 rounded-lg">
-                <p className="text-body mb-2"><strong>GMG Transportation Inc.</strong></p>
-                <p className="text-body mb-2">Email: gmgtransinc@gmail.com</p>
-                <p className="text-body mb-2">Phone: 323-284-8444</p>
-                <p className="text-body">Location: Los Angeles, California</p>
+          <div className="space-y-4">
+            {sections.map((section, i) => (
+              <div key={i} className="card">
+                <h2
+                  className="text-lg sm:text-xl font-bold text-[var(--color-primary)] mb-4 pb-3"
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    borderBottom: '1px solid var(--color-border)',
+                  }}
+                >
+                  {section.title}
+                </h2>
+                {section.content}
               </div>
-            </div>
+            ))}
 
-            <div className="bg-[var(--color-accent)] bg-opacity-10 p-6 rounded-lg border-l-4 border-[var(--color-accent)]">
+            <div
+              className="rounded-[var(--radius-xl)] p-5 sm:p-6"
+              style={{
+                background: 'rgb(212 175 55 / 0.08)',
+                border: '1px solid rgb(212 175 55 / 0.2)',
+                borderLeft: '4px solid var(--color-accent)',
+              }}
+            >
               <p className="text-body font-semibold">
-                By using GMG Transportation services, you acknowledge that you have read, understood, 
-                and agree to be bound by these Terms of Service.
+                By using GMG Transportation services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
               </p>
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <a href="/contact" className="btn-primary inline-block hover:scale-105 transition-transform">
-              Questions? Contact Us
-            </a>
+          <div className="text-center mt-10">
+            <a href="/contact" className="btn-primary">Questions? Contact Us</a>
           </div>
         </div>
       </section>

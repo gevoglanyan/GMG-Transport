@@ -1,95 +1,133 @@
 import React from 'react';
 import Head from 'next/head';
-import ContactForm from '../components/ContactForm'; 
+import ContactForm from '../components/ContactForm';
+
+const contactCards = [
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    ),
+    label: 'Call Us',
+    value: '(323) 284-8444',
+    href: 'tel:+13232848444',
+    sub: 'Available 24/7',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    label: 'Email Us',
+    value: 'gmgtransinc@gmail.com',
+    href: 'mailto:gmgtransinc@gmail.com',
+    sub: 'We reply promptly',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+      </svg>
+    ),
+    label: 'Instagram',
+    value: '@gmgtransportation',
+    href: 'https://instagram.com/gmgtransportation',
+    external: true,
+    sub: 'Follow us',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    label: 'Location',
+    value: 'Los Angeles, CA',
+    href: null,
+    sub: 'Serving all of SoCal',
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact</title>
+        <title>Contact GMG</title>
         <meta name="description" content="Get in touch with GMG Transportation Inc. for bookings, questions, or custom ride requests." />
       </Head>
 
       <section className="bg-gradient-to-b from-white to-[var(--color-bg)] section-padding">
         <div className="container-narrow animate-fade-in">
-          <div className="text-center mb-12">
-            <h3 className="heading-lg mb-4">Get In Touch</h3>
-            <div className="h-1 w-24 bg-[var(--color-accent)] mx-auto rounded-full mb-6"></div>
-            <p className="text-body-lg">
-              Have questions about our services? Need help with a booking? Fill out the form below or reach out directly — we're here to help.
+          <div className="text-center mb-10 sm:mb-14">
+            <span className="section-label mb-3 inline-flex">Reach Out</span>
+            <h1 className="heading-lg mb-4">Get In Touch</h1>
+            <div className="gold-divider mx-auto mb-6" />
+            <p className="text-body-lg max-w-xl mx-auto">
+              Have questions or need help with a booking? Reach out directly or fill out the form below — we're available 24/7.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
-            <div className="card text-center group hover:scale-[1.02] transition-all duration-300">
-              <div className="w-14 h-14 bg-[var(--color-accent)] bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-[var(--color-primary)] mb-2">Call Us</h4>
-              <a 
-                href="tel:+14243332293" 
-                className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold text-lg transition-colors"
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10 sm:mb-14">
+            {contactCards.map((card) => (
+              <div
+                key={card.label}
+                className="card text-center group hover:scale-[1.02] transition-all duration-300 flex flex-col items-center"
               >
-                (323) 284-8444
-              </a>
-            </div>
-
-            <div className="card text-center group hover:scale-[1.02] transition-all duration-300">
-              <div className="w-14 h-14 bg-[var(--color-accent)] bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <div className="icon-badge mb-3 group-hover:scale-110 transition-transform">
+                  {card.icon}
+                </div>
+                <h4 className="font-semibold text-[var(--color-primary)] mb-1 text-sm sm:text-base">
+                  {card.label}
+                </h4>
+                {card.href ? (
+                  <a
+                    href={card.href}
+                    target={card.external ? '_blank' : undefined}
+                    rel={card.external ? 'noopener noreferrer' : undefined}
+                    className="font-semibold transition-colors duration-200 hover:text-[var(--color-accent-hover)] text-sm sm:text-base break-all"
+                    style={{ color: 'var(--color-accent)' }}
+                  >
+                    {card.value}
+                  </a>
+                ) : (
+                  <p className="font-semibold text-sm sm:text-base" style={{ color: 'var(--color-text-secondary)' }}>
+                    {card.value}
+                  </p>
+                )}
+                {card.sub && (
+                  <p className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>
+                    {card.sub}
+                  </p>
+                )}
               </div>
-              <h4 className="font-semibold text-[var(--color-primary)] mb-2">Email Us</h4>
-              <a 
-                href="mailto:gmgtransinc@gmail.com"
-                className="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold transition-colors whitespace-nowrap"
-              >
-                gmgtransinc@gmail.com
-              </a>
-            </div>
-
-            <div className="card text-center group hover:scale-[1.02] transition-all duration-300">
-              <div className="w-14 h-14 bg-[var(--color-accent)] bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-[var(--color-accent)]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </div>
-              <h4 className="font-semibold text-[var(--color-primary)] mb-2">Instagram</h4>
-              <a 
-                href="https://instagram.com/gmgtransportation" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-semibold transition-colors"
-              >
-                @gmgtransportation
-              </a>
-            </div>
-
-            <div className="card text-center group hover:scale-[1.02] transition-all duration-300">
-              <div className="w-14 h-14 bg-[var(--color-accent)] bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-[var(--color-primary)] mb-2">Location</h4>
-              <p className="text-[var(--color-text-secondary)]">
-                Los Angeles, California
-              </p>
-            </div>
+            ))}
           </div>
 
           <ContactForm />
 
-          <div className="card bg-[var(--color-bg)] text-center mt-12">
-            <h4 className="font-semibold text-[var(--color-primary)] mb-4">Business Hours</h4>
-            <p className="text-sm text-[var(--color-text-muted)]">
-              Monday - Sunday, 24/7 Service Available
-            </p>
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 p-5 rounded-[var(--radius-xl)] text-center"
+            style={{ background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%)` }}
+          >
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ background: 'rgb(212 175 55 / 0.15)' }}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="var(--color-accent)" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-semibold text-white text-sm sm:text-base">Business Hours</p>
+              <p className="text-xs sm:text-sm" style={{ color: 'var(--color-text-muted)' }}>
+                Monday – Sunday &nbsp;·&nbsp; 9am–6pm PT
+              </p>
+            </div>
           </div>
+
         </div>
       </section>
     </>
