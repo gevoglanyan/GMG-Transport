@@ -85,7 +85,7 @@ export default function Layout({ children }) {
                   }}
                   className="group-hover:text-[var(--color-accent)]"
                 >
-                  GMG Transportation
+                  GMG Transportation, Inc
                 </span>
                 <span style={{
                   fontSize: '0.58rem',
