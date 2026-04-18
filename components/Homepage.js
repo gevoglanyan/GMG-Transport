@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 const trustItems = [
   { label: '15+ Years Experience' },
-  { label: 'TCP 39496-P Licensed' },
+  { label: 'TCP 36496-P Licensed' },
   { label: 'Background-Checked Drivers' },
 ];
 
@@ -80,7 +80,7 @@ export default function Homepage() {
       <Head>
         <title>GMG Transportation, Inc</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Luxury black car and SUV services in Los Angeles since 2010. Book GMG Transportation for executive travel, events, and airport transfers. TCP 39496-P." />
+        <meta name="description" content="Luxury black car and SUV services in Los Angeles since 2010. Book GMG Transportation for executive travel, events, and airport transfers. TCP 36496-P." />
       </Head>
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>

@@ -359,7 +359,7 @@ export default function Layout({ children }) {
             textTransform: 'uppercase',
             color: 'rgba(255,255,255,0.18)',
           }}>
-            GMG Transportation · TCP 39496-P
+            GMG Transportation · TCP 36496-P
           </p>
         </div>
       )}
@@ -383,7 +383,7 @@ export default function Layout({ children }) {
               </p>
 
               <p className="text-gray-500 text-xs tracking-wider uppercase mt-4">
-                TCP 39496-P · Licensed &amp; Insured
+                TCP 36496-P · Licensed &amp; Insured
               </p>
 
               <p className="text-gray-500 text-xs mt-5">
