@@ -12,7 +12,7 @@ const contactCards = [
     label: 'Call Us',
     value: '(323) 284-8444',
     href: 'tel:+13232848444',
-    sub: 'Available 24/7',
+    sub: '9am–6pm PT',
   },
   {
     icon: (
@@ -21,9 +21,9 @@ const contactCards = [
       </svg>
     ),
     label: 'Email Us',
-    value: 'gmgtransinc@gmail.com',
+    value: 'gmgtransinc',
     href: 'mailto:gmgtransinc@gmail.com',
-    sub: 'We reply promptly',
+    sub: '@gmail.com',
   },
   {
     icon: (
@@ -32,10 +32,10 @@ const contactCards = [
       </svg>
     ),
     label: 'Instagram',
-    value: '@gmgtransportation',
+    value: 'gmgtransportation',
     href: 'https://instagram.com/gmgtransportation',
     external: true,
-    sub: 'Follow us',
+    sub: 'Follow Us',
   },
   {
     icon: (
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <h1 className="heading-lg mb-4">Get In Touch</h1>
             <div className="gold-divider mx-auto mb-6" />
             <p className="text-body-lg max-w-xl mx-auto">
-              Have questions or need help with a booking? Reach out directly or fill out the form below — we're available 24/7.
+              Have questions or need help with a booking? <br/> Reach out directly or fill out the form below.
             </p>
           </div>
 
@@ -108,22 +108,16 @@ export default function ContactPage() {
 
           <ContactForm />
 
+          <br/> <br/>
+
           <div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 p-5 rounded-[var(--radius-xl)] text-center"
             style={{ background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%)` }}
           >
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgb(212 175 55 / 0.15)' }}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="var(--color-accent)" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
             <div>
               <p className="font-semibold text-white text-sm sm:text-base">Business Hours</p>
-              <p className="text-xs sm:text-sm" style={{ color: 'var(--color-text-muted)' }}>
-                Monday – Sunday &nbsp;·&nbsp; 9am–6pm PT
+              <p className="text-xs sm:text-lg" style={{ color: 'var(--color-text-muted)' }}>
+                <br/>Monday – Sunday <br/> 9am – 6pm PST <br/> <br/> Feel free to reach out
               </p>
             </div>
           </div>

@@ -71,16 +71,22 @@ export default function ReviewsPage() {
             ))}
           </div>
 
-          <div className="cta-card mt-14 max-w-2xl mx-auto">
+          <div className="cta-card mt-18 max-w-2xl mx-auto">
             <h3
               className="text-2xl sm:text-3xl font-bold mb-4 text-white"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Experience the GMG Difference
             </h3>
+
+            <br/>
+
             <p className="text-gray-300 text-base sm:text-lg mb-6">
               Join hundreds of satisfied clients who trust GMG for their luxury travel needs.
             </p>
+
+            <br/>
+
             <a href="/services#booking" className="btn-accent">
               Book Your Ride Today
             </a>

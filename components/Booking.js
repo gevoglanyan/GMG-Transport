@@ -41,10 +41,9 @@ const Booking = () => {
   const [customAirline, setCustomAirline] = useState('');
 
   const bookingFormRef = useRef(null);
-
-  // Scroll to top of the booking form only when advancing steps (not on mount)
+  
   useEffect(() => {
-    if (step === 1) return; // don't scroll on initial load
+    if (step === 1) return;
     if (bookingFormRef.current) {
       setTimeout(() => {
         const top = bookingFormRef.current.getBoundingClientRect().top + window.scrollY - 100;

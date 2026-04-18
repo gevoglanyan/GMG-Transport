@@ -26,7 +26,6 @@ export default function Homepage() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Fewer particles on mobile for performance
     const count = window.innerWidth < 640 ? 24 : 48;
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -152,8 +151,6 @@ export default function Homepage() {
             <br/>
 
             <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1.5rem' }}>
-              <div style={{ position: 'absolute', inset: -8, borderRadius: '1.4rem', border: '1.5px solid rgba(212,175,55,0.2)', pointerEvents: 'none', animation: 'ringPulse 4s ease-in-out infinite' }} />
-              <div style={{ position: 'absolute', inset: -18, borderRadius: '1.8rem', border: '1px solid rgba(212,175,55,0.08)', pointerEvents: 'none', animation: 'ringPulse 4s ease-in-out infinite 1s' }} />
               <img
                 src="/images/GMG.png"
                 alt="GMG Transportation Logo"
@@ -191,7 +188,9 @@ export default function Homepage() {
               <div style={{ width: 3, height: 3, borderRadius: '50%', background: '#D4AF37', opacity: 0.5 }} />
               <div style={{ height: 1, width: '3rem', background: 'linear-gradient(90deg, #D4AF37, transparent)' }} />
             </div>
-
+            
+            <br />
+            
             <h1 style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: 'clamp(1.85rem, 6vw, 3.25rem)',
@@ -201,7 +200,7 @@ export default function Homepage() {
               marginBottom: '0.9rem',
               color: 'var(--color-primary)',
             }}>
-              Luxury Transportation<br />
+              Luxury Transportation <br />
               <span style={{ color: '#D4AF37' }}>Services</span>
             </h1>
 

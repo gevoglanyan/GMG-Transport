@@ -9,9 +9,9 @@ const pillars = [
       </svg>
     ),
     title: 'Our Legacy',
-    body: `GMG Transportation, Inc has proudly served the Los Angeles area for over 15 years, delivering premium transportation
-services defined by elegance, professionalism, and reliability. With a fleet of luxury vehicles and experienced chauffeurs,
-we ensure every ride is more than just a journey — it's a first-class experience.`,
+    body: `GMG Transportation, Inc has proudly served the greater Los Angeles area for over 15 years, delivering premium transportation
+            services defined by elegance, professionalism, and reliability. With a fleet of luxury vehicles and experienced chauffeurs,
+            we ensure every ride is more than just a journey — it's a first-class experience.`,
   },
   {
     icon: (
@@ -21,7 +21,7 @@ we ensure every ride is more than just a journey — it's a first-class experien
     ),
     title: 'Our Mission',
     body: `Our mission is simple: to elevate transportation into a luxurious, seamless, and unforgettable experience. Whether you're a corporate executive,
-a bride-to-be, a frequent flyer, or a visitor seeking sophistication and comfort, GMG offers tailored solutions that meet your specific needs.`,
+            a bride-to-be, a frequent flyer, or a visitor seeking sophistication and comfort, GMG offers tailored solutions that meet your specific needs.`,
   },
   {
     icon: (
@@ -40,7 +40,7 @@ a bride-to-be, a frequent flyer, or a visitor seeking sophistication and comfort
     ),
     title: 'Your Safety & Satisfaction',
     body: `At GMG, your safety and satisfaction come first. All our vehicles are insured and safety-inspected, and our drivers are background-checked and held to strict conduct protocols.
-We use real-time GPS tracking and flight monitoring to ensure timely arrivals and departures — because your time is valuable.`,
+            We use real-time GPS tracking and flight monitoring to ensure timely arrivals and departures — because your time is valuable.`,
   },
 ];
 
@@ -61,8 +61,6 @@ export default function AboutPage() {
 
       <section className="bg-gradient-to-b from-white to-[var(--color-bg)] section-padding">
         <div className="container-narrow animate-fade-in">
-
-          {/* Header */}
           <div className="text-center mb-12 sm:mb-16">
             <span className="section-label mb-3 inline-flex">About Us</span>
             <h1 className="heading-lg text-[var(--color-primary)] mb-4">
@@ -95,6 +93,8 @@ export default function AboutPage() {
             ))}
           </div>
 
+          <br/>
+
           <div className="space-y-4 sm:space-y-6">
             {pillars.map((p, i) => (
               <div
@@ -114,16 +114,21 @@ export default function AboutPage() {
               </div>
             ))}
 
+            <br/> <br/>
+
             <div className="cta-card mt-6">
               <h3
-                className="text-2xl sm:text-3xl font-bold mb-4"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              className="text-2xl sm:text-3xl font-bold mb-4 text-white"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Experience the GMG Difference
               </h3>
+
+              <br />
+              
               <p className="text-base sm:text-lg text-gray-300 mb-6 max-w-xl mx-auto">
                 Whether it's a black-tie gala, airport pickup, day trip, or special event, we're here to make it extraordinary.
-                Every mile matters.
+                <br/> <br/> Every mile matters here at GMG Transportaion, Inc.
               </p>
               <br />
               <a href="/fleet" className="btn-accent">

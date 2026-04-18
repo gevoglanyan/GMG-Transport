@@ -71,7 +71,7 @@ export default function ContactForm() {
               type="tel"
               required
               className="w-full"
-              placeholder="424-333-2293"
+              placeholder="323-284-8444"
             />
           )}
         </InputMask>
@@ -86,7 +86,7 @@ export default function ContactForm() {
           name="message"
           rows="5"
           required
-          placeholder="Tell us about your transportation needs..."
+          placeholder="Tell us about your Transportation needs..."
           className="w-full resize-none"
         />
         <ValidationError prefix="Message" field="message" errors={state.errors} />

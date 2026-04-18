@@ -160,8 +160,6 @@ function VehiclesSection() {
   return (
     <section id="vehicles" className="section-padding bg-gradient-to-b from-white to-[var(--color-bg)]">
       <div className="container-wide text-center animate-fade-in">
-
-        {/* Header */}
         <div className="mb-12 md:mb-16">
           <span className="section-label mb-3 inline-flex">Our Fleet</span>
           <h1 className="heading-lg mb-4">Premium Vehicles</h1>
@@ -190,7 +188,6 @@ function VehiclesSection() {
                   className="card flex flex-col hover:scale-[1.01] transition-all duration-300 animate-slide-in text-left"
                   style={{ animationDelay: `${vehicleIndex * 0.1}s` }}
                 >
-                  {/* Image carousel */}
                   <div className="relative -mx-6 -mt-6 mb-4">
                     {Array.isArray(v.images) && v.images.length > 0 ? (
                       <div
@@ -207,7 +204,6 @@ function VehiclesSection() {
                           draggable="false"
                         />
 
-                        {/* Counter badge */}
                         {v.images.length > 1 && (
                           <div className="absolute top-3 right-3 bg-black/70 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,7 +213,6 @@ function VehiclesSection() {
                           </div>
                         )}
 
-                        {/* Prev/Next arrows */}
                         {v.images.length > 1 && (
                           <>
                             <button
@@ -241,7 +236,6 @@ function VehiclesSection() {
                           </>
                         )}
 
-                        {/* Desktop hover hint */}
                         <div className="hidden md:flex absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded-t-[var(--radius-xl)] items-center justify-center pointer-events-none">
                           <div className="bg-white/90 px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
                             <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,7 +245,6 @@ function VehiclesSection() {
                           </div>
                         </div>
 
-                        {/* Mobile swipe hint */}
                         {v.images.length > 1 && (
                           <div className="md:hidden absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-2.5 py-1 rounded-full text-[10px] flex items-center gap-1">
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -268,7 +261,6 @@ function VehiclesSection() {
                     )}
                   </div>
 
-                  {/* Card body */}
                   <div className="flex flex-col flex-1">
                     <div className="mb-3">
                       <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">{v.brand}</p>
@@ -285,7 +277,6 @@ function VehiclesSection() {
 
                     <p className="text-body text-sm flex-1 leading-relaxed mb-4">{v.desc}</p>
 
-                    {/* View Details toggle */}
                     <button
                       onClick={() => toggleDetails(groupIndex, vehicleIndex)}
                       className="w-full mb-4 py-3 px-4 rounded-[var(--radius-lg)] font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-200 touch-manipulation"
@@ -304,10 +295,8 @@ function VehiclesSection() {
                       </svg>
                     </button>
 
-                    {/* Expanded details */}
                     {isDetailsExpanded(groupIndex, vehicleIndex) && (
                       <div className="animate-fade-in mb-4 space-y-4">
-                        {/* Capacity & Luggage */}
                         <div className="grid grid-cols-2 gap-3">
                           {[
                             { icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />, label: 'Capacity', value: v.capacity },
@@ -323,7 +312,6 @@ function VehiclesSection() {
                           ))}
                         </div>
 
-                        {/* Features */}
                         <div className="border-t pt-4" style={{ borderColor: 'var(--color-border)' }}>
                           <p className="text-xs font-semibold text-[var(--color-text-muted)] mb-3 flex items-center gap-1.5">
                             <svg className="w-4 h-4" fill="none" stroke="var(--color-accent)" viewBox="0 0 24 24">
@@ -341,7 +329,6 @@ function VehiclesSection() {
                           </ul>
                         </div>
 
-                        {/* Rates */}
                         <div
                           className="p-4 rounded-[var(--radius-lg)]"
                           style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-light))' }}
@@ -371,7 +358,6 @@ function VehiclesSection() {
           </div>
         ))}
 
-        {/* CTA — ✅ removed #booking anchor */}
         <div className="mt-8 text-center">
           <a href="/services" className="btn-accent touch-manipulation">
             Book Your Vehicle Now
@@ -379,7 +365,6 @@ function VehiclesSection() {
         </div>
       </div>
 
-      {/* Lightbox */}
       {lightbox.isOpen && lightbox.groupIndex !== null && lightbox.vehicleIndex !== null && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center animate-fade-in"
@@ -395,7 +380,6 @@ function VehiclesSection() {
               draggable="false"
             />
 
-            {/* Close */}
             <button
               onClick={() => setLightbox({ isOpen: false, groupIndex: null, vehicleIndex: null, imageIndex: 0 })}
               className="absolute top-4 right-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all touch-manipulation"
@@ -406,7 +390,6 @@ function VehiclesSection() {
               </svg>
             </button>
 
-            {/* Prev/Next */}
             {vehicleGroups[lightbox.groupIndex].vehicles[lightbox.vehicleIndex].images.length > 1 && (
               <>
                 <button
@@ -436,12 +419,10 @@ function VehiclesSection() {
               </>
             )}
 
-            {/* Counter */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 px-4 py-1.5 rounded-full text-white text-sm">
               {lightbox.imageIndex + 1} / {vehicleGroups[lightbox.groupIndex].vehicles[lightbox.vehicleIndex].images.length}
             </div>
 
-            {/* Mobile swipe hint */}
             {vehicleGroups[lightbox.groupIndex].vehicles[lightbox.vehicleIndex].images.length > 1 && (
               <div className="md:hidden absolute top-4 left-1/2 -translate-x-1/2 bg-white/10 text-white px-3 py-1 rounded-full text-xs flex items-center gap-1">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

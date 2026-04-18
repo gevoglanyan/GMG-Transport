@@ -80,7 +80,6 @@
     cursor: pointer;
   }
 
-  /* ── Buttons ── */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -161,7 +160,6 @@
   }
   .btn-outline:active { transform: scale(0.97); }
 
-  /* ── Inputs ── */
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -206,7 +204,6 @@
     padding-right: 44px;
   }
 
-  /* ── Card ── */
   .card {
     background: white;
     border-radius: var(--radius-xl);
@@ -221,7 +218,6 @@
 }
 
 @layer components {
-  /* ── Layout ── */
   .section-padding {
     padding: 4rem 1.25rem;
   }
@@ -235,7 +231,6 @@
   .container-narrow { max-width: 56rem; margin-left: auto; margin-right: auto; }
   .container-wide   { max-width: 80rem; margin-left: auto; margin-right: auto; }
 
-  /* ── Typography ── */
   .heading-xl { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; }
   .heading-lg { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; letter-spacing: -0.025em; }
   .heading-md { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; }
@@ -252,7 +247,6 @@
     line-height: 1.7;
   }
 
-  /* ── Gold divider ── */
   .gold-divider {
     height: 3px;
     width: 3rem;
@@ -260,7 +254,6 @@
     border-radius: var(--radius-full);
   }
 
-  /* ── Section label ── */
   .section-label {
     display: inline-flex;
     align-items: center;
@@ -272,7 +265,6 @@
     color: var(--color-accent);
   }
 
-  /* ── Icon badge ── */
   .icon-badge {
     width: 3rem;
     height: 3rem;
@@ -286,7 +278,6 @@
   }
   .icon-badge svg { color: var(--color-accent); }
 
-  /* ── Dark CTA card ── */
   .cta-card {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     border-radius: var(--radius-xl);
@@ -296,7 +287,6 @@
   }
 }
 
-/* ── Animations ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -314,7 +304,6 @@
 .animate-slide-in    { animation: slideInLeft 0.5s ease-out both; }
 .animate-fade        { animation: fadeIn 0.4s ease-out both; }
 
-/* ── Mouse brush (retained) ── */
 .mouse-brush {
   position: absolute;
   width: 40px;
@@ -338,7 +327,6 @@
   -webkit-user-select: none;
 }
 
-/* ── Misc ── */
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-primary);
@@ -348,7 +336,6 @@
   outline-offset: 2px;
 }
 
-/* ── Mobile-specific tweaks ── */
 @media (max-width: 639px) {
   .card { padding: 1.25rem; border-radius: 0.875rem; }
   .btn-primary, .btn-accent, .btn-outline { width: 100%; justify-content: center; }
