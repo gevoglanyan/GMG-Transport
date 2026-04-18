@@ -359,7 +359,7 @@ export default function Layout({ children }) {
             textTransform: 'uppercase',
             color: 'rgba(255,255,255,0.18)',
           }}>
-            GMG Transportation · TCP 36496-P
+            GMG Transportation, Inc · TCP 36496-P
           </p>
         </div>
       )}
